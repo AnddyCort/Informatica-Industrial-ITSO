@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -129,10 +130,18 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-width: 300px; /* Ancho mínimo para las tarjetas */
-            max-width: 400px; /* Ancho máximo para las tarjetas */
+            aspect-ratio: 16 / 9; /* Relación de aspecto 16:9 */
+            min-width: 250px; /* Ancho mínimo */
+            max-width: 400px; /* Ancho máximo */
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
         }
 
         .card h3 {
@@ -142,16 +151,16 @@
             background: rgba(0, 0, 0, 0.5); /* Fondo translúcido para el título */
             padding: 0.5rem;
             border-radius: 8px;
-            z-index: 2;
+            display: inline-block; /* Ajusta el fondo al tamaño del texto */
         }
 
         .card p {
             color: #e0e0e0;
-            margin-bottom: 0;
+            margin-bottom: 0.5rem;
             background: rgba(0, 0, 0, 0.5); /* Fondo translúcido para la descripción */
             padding: 0.5rem;
             border-radius: 8px;
-            z-index: 2;
+            display: inline-block; /* Ajusta el fondo al tamaño del texto */
         }
 
         /* Colores específicos por sección */
@@ -207,7 +216,7 @@
             }
 
             .card {
-                min-width: 250px; /* Ajuste para móviles */
+                min-width: 200px; /* Ajuste para móviles */
             }
         }
 
@@ -217,7 +226,7 @@
             }
 
             .card {
-                min-width: 200px; /* Ajuste para móviles pequeños */
+                min-width: 180px; /* Ajuste para móviles pequeños */
             }
         }
     </style>
@@ -245,10 +254,12 @@
                     <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=org.telegram.messenger', '_blank')">
                         <h3>Descargar Telegram</h3>
                         <p>Obtén la aplicación oficial de Telegram para unirte a nuestros grupos 📱</p>
+                        <p>Descarga desde Google Play o App Store.</p>
                     </div>
                     <div class="card" onclick="window.open('https://t.me/+VJrNYJire-phNGFh', '_blank')">
                         <h3>Grupo Principal</h3>
                         <p>Únete a nuestro grupo principal de Telegram 💬</p>
+                        <p>Comparte dudas, recursos y más.</p>
                     </div>
                 </div>
             </div>
@@ -261,10 +272,12 @@
                     <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=com.discord', '_blank')">
                         <h3>Descargar Discord</h3>
                         <p>Descarga Discord para unirte a nuestra comunidad 🎮</p>
+                        <p>Disponible en múltiples plataformas.</p>
                     </div>
                     <div class="card" onclick="window.open('https://discord.gg/xscuXT5E', '_blank')">
                         <h3>Servidor Oficial</h3>
                         <p>Únete a nuestro servidor oficial de Discord 🎯</p>
+                        <p>Participa en eventos y chats en vivo.</p>
                     </div>
                 </div>
             </div>
@@ -277,10 +290,12 @@
                     <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=com.whatsapp', '_blank')">
                         <h3>Descargar WhatsApp</h3>
                         <p>Obtén WhatsApp para unirte a nuestros grupos ❇️</p>
+                        <p>Descarga desde Google Play o App Store.</p>
                     </div>
                     <div class="card" onclick="window.open('https://chat.whatsapp.com/Gj3zwq31supBLcqh20vLB7', '_blank')">
                         <h3>Chat General</h3>
                         <p>Únete a nuestro grupo general de WhatsApp 📬</p>
+                        <p>Comparte información y resuelve dudas.</p>
                     </div>
                 </div>
             </div>
@@ -293,14 +308,17 @@
                     <div class="card" onclick="window.open('https://telegra.ph/REQUISITOS-01-31', '_blank')">
                         <h3>Requisitos Para Los Grupos</h3>
                         <p>Conoce los requisitos necesarios para unirte 📖</p>
+                        <p>Lee las condiciones antes de participar.</p>
                     </div>
                     <div class="card" onclick="window.open('https://telegra.ph/REGLAS-DE-LOS-GRUPOS-01-31', '_blank')">
                         <h3>Reglas De Los Grupos</h3>
                         <p>Revisa las reglas de nuestra comunidad 📊</p>
+                        <p>Mantén un ambiente respetuoso.</p>
                     </div>
                     <div class="card" onclick="window.open('https://telegra.ph/ITSO-07-31', '_blank')">
                         <h3>Información Sobre La Carrera</h3>
                         <p>Descubre todo sobre Informática Industrial ❓</p>
+                        <p>Conoce el plan de estudios y más.</p>
                     </div>
                 </div>
             </div>
