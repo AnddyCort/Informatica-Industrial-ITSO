@@ -5,12 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informática Industrial</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0) rotate(1deg); }
+            25% { transform: translateY(-12px) rotate(-1deg); }
+            50% { transform: translateY(0) rotate(1deg); }
+            75% { transform: translateY(12px) rotate(-1deg); }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes aurora {
+            0% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(10px, -10px) scale(1.1); }
+            50% { transform: translate(0, 0) scale(1); }
+            75% { transform: translate(-10px, 10px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        body {
             background: #161622;
+            font-family: 'Inter', sans-serif;
             color: #fff;
+            min-height: 100vh;
             overflow-x: hidden;
         }
 
@@ -52,12 +89,10 @@
             transform: translate(-50%, -50%);
         }
 
-        .page-wrapper {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
             position: relative;
             z-index: 1;
         }
@@ -65,134 +100,155 @@
         .header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            width: 90%;
-            max-width: 1200px;
-            margin-bottom: 40px;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            background: rgba(28, 28, 40, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 20px;
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
             object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.1);
         }
 
-        .profile-img:hover {
-            transform: scale(1.05);
-        }
-
-        .title {
-            text-align: right;
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             color: #fff;
-            font-size: 28px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .description {
-            color: #b4b4cc;
-            text-align: center;
-            margin-top: 20px;
-            line-height: 1.6;
-            width: 90%;
-            max-width: 1200px;
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid;
         }
 
         .cards-container {
+            width: 100%;
+            overflow-x: auto;
+            padding: 1rem 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .cards-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cards {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            width: 90%;
-            max-width: 1200px;
+            gap: 1.5rem;
+            padding: 0.5rem;
         }
 
         .card {
+            flex: 0 0 300px;
             background: rgba(28, 28, 40, 0.95);
+            border-radius: 15px;
+            padding: 1.5rem;
             backdrop-filter: blur(20px);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            width: calc(25% - 20px);
-            min-width: 250px;
-            padding: 20px;
             transition: transform 0.3s ease;
-            animation: slide-in 1s ease-out;
-        }
-
-        .card:nth-child(odd) {
-            animation: slide-in-left 1s ease-out;
-        }
-
-        .card:nth-child(even) {
-            animation: slide-in-right 1s ease-out;
+            cursor: pointer;
+            animation: slideIn 0.5s ease-out forwards;
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
 
         .card img {
-            width: 100%;
-            height: 150px;
-            border-radius: 15px;
-            object-fit: cover;
-            margin-bottom: 15px;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
 
-        .card h2 {
-            font-size: 20px;
-            margin-bottom: 10px;
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
             color: #fff;
         }
 
         .card p {
-            font-size: 14px;
             color: #b4b4cc;
-            line-height: 1.5;
+            margin-bottom: 1rem;
         }
 
-        @keyframes aurora {
-            0% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(10px, -10px) scale(1.1); }
-            50% { transform: translate(0, 0) scale(1); }
-            75% { transform: translate(-10px, 10px) scale(0.9); }
-            100% { transform: translate(0, 0) scale(1); }
+        /* Colores específicos por sección */
+        .telegram .section-title {
+            color: #40a9ff;
+            border-color: rgba(64, 169, 255, 0.3);
         }
 
-        @keyframes slide-in-left {
-            0% { transform: translateX(-100%); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
+        .telegram .card {
+            background: linear-gradient(45deg, #1d93d2, #40a9ff);
         }
 
-        @keyframes slide-in-right {
-            0% { transform: translateX(100%); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
+        .discord .section-title {
+            color: #5865f2;
+            border-color: rgba(88, 101, 242, 0.3);
+        }
+
+        .discord .card {
+            background: linear-gradient(45deg, #404eed, #5865f2);
+        }
+
+        .whatsapp .section-title {
+            color: #25d366;
+            border-color: rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp .card {
+            background: linear-gradient(45deg, #128c7e, #25d366);
+        }
+
+        .info .section-title {
+            color: #ff6b9f;
+            border-color: rgba(255, 107, 159, 0.3);
+        }
+
+        .info .card {
+            background: linear-gradient(45deg, #ff4785, #ff6b9f);
         }
 
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                align-items: center;
                 text-align: center;
             }
 
-            .title {
-                text-align: center;
-                margin-top: 20px;
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .header-content h1 {
+                font-size: 2rem;
             }
 
             .card {
-                width: calc(50% - 20px);
+                flex: 0 0 250px;
             }
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
             .card {
-                width: 100%;
+                flex: 0 0 200px;
             }
         }
     </style>
@@ -204,37 +260,91 @@
         <div></div>
     </div>
 
-    <div class="page-wrapper">
-        <div class="header">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLAmpg0IzxBl_EJjh3QDlKW2YMCxxlfRARnRwyn-ah9sTPeAPEp7f9-_ogUfGlgFhzeqM_K2CXhcXEhjTbph0XgQaAZbAlcOxadwxk7_EM65zzU4zq4QMPnqK57I6NpjdbzwJiVThydas4GQD2X8ffVgUqVWRfQOmQSi4-ypDcTXPUhUWpQRiAGCbpVMPT/s785/93a9c92bbda618c1831d00ab1c85e2e0.jpg" alt="Logo Institucional" class="profile-img">
-            <div class="title">
+    <div class="container">
+        <header class="header">
+            <img src="/api/placeholder/200/200" alt="Logo Institucional" class="profile-img">
+            <div class="header-content">
                 <h1>ɪɴꜰᴏʀᴍᴀᴛɪᴄᴀ ɪɴᴅᴜsᴛʀɪᴀʟ</h1>
-                <p class="description">🤝🏻𝑩𝒊𝒆𝒏𝒗𝒆𝒏𝒊𝒅𝒐 𝒂 𝒏𝒖𝒆𝒔𝒕𝒓𝒂 𝒄𝒐𝒎𝒖𝒏𝒊𝒅𝒂𝒅. 𝑨𝒒𝒖𝒊 𝒆𝒏𝒄𝒐𝒏𝒕𝒓𝒂𝒓𝒂𝒔 𝒕𝒐𝒅𝒐𝒔 🗂 𝒍𝒐𝒔 𝒈𝒓𝒖𝒑𝒐𝒔 𝒐𝒇𝒊𝒄𝒊𝒂𝒍𝒆𝒔 𝒅𝒆 𝒍𝒂 𝒄𝒂𝒓𝒓𝒆𝒓𝒂 𝒅𝒆 💻 𝑰𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒄𝒂 𝑰𝒏𝒅𝒖𝒔𝒕𝒓𝒊𝒂𝒍.⚡️ ¡𝑼𝒏𝒆𝒕𝒆 𝒚 𝒎𝒂𝒏𝒕𝒆𝒏𝒕𝒆 𝒄𝒐𝒏𝒆𝒄𝒕𝒂𝒅𝒐! 🚀</p>
+                <p>🤝🏻 Bienvenido a nuestra comunidad. Aquí encontrarás todos 🗂 los grupos oficiales de la carrera de 💻 Informática Industrial.⚡️ ¡Únete y mantente conectado! 🚀</p>
             </div>
-        </div>
+        </header>
 
-        <div class="cards-container">
-            <div class="card">
-                <img src="https://via.placeholder.com/300" alt="Telegram">
-                <h2>Grupos en Telegram</h2>
-                <p>Descarga Telegram y únete a nuestros grupos oficiales para mantenerte conectado con la comunidad.</p>
+        <section class="section telegram">
+            <h2 class="section-title">Grupos en Telegram</h2>
+            <div class="cards-container">
+                <div class="cards">
+                    <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=org.telegram.messenger', '_blank')">
+                        <img src="/api/placeholder/60/60" alt="Telegram Icon">
+                        <h3>Descargar Telegram</h3>
+                        <p>Obtén la aplicación oficial de Telegram para unirte a nuestros grupos 📱</p>
+                    </div>
+                    <div class="card" onclick="window.open('https://t.me/+VJrNYJire-phNGFh', '_blank')">
+                        <img src="/api/placeholder/60/60" alt="Group Icon">
+                        <h3>Grupo Principal</h3>
+                        <p>Únete a nuestro grupo principal de Telegram 💬</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300" alt="Discord">
-                <h2>Grupos en Discord</h2>
-                <p>Únete a nuestro servidor de Discord para participar en discusiones y eventos en tiempo real.</p>
+        </section>
+
+        <section class="section discord">
+            <h2 class="section-title">Grupos en Discord</h2>
+            <div class="cards-container">
+                <div class="cards">
+                    <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=com.discord', '_blank')">
+                        <img src="/api/placeholder/60/60" alt="Discord Icon">
+                        <h3>Descargar Discord</h3>
+                        <p>Descarga Discord para unirte a nuestra comunidad 🎮</p>
+                    </div>
+                    <div class="card" onclick="window.open('https://discord.gg/xscuXT5E', '_blank')">
+                        <img src="/api/placeholder/60/60" alt="Server Icon">
+                        <h3>Servidor Oficial</h3>
+                        <p>Únete a nuestro servidor oficial de Discord 🎯</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300" alt="WhatsApp">
-                <h2>Grupos en WhatsApp</h2>
-                <p>Conéctate con tus compañeros a través de nuestros grupos de WhatsApp para compartir información y recursos.</p>
+        </section>
+
+        <section class="section whatsapp">
+            <h2 class="section-title">Grupos en WhatsApp</h2>
+            <div class="cards-container">
+                <div class="cards">
+                    <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=com.whatsapp', '_blank')">
+                        <img src="/api/placeholder/60/60" alt="WhatsApp Icon">
+                        <h3>Descargar WhatsApp</h3>
+                        <p>Obtén WhatsApp para unirte a nuestros grupos ❇️</p>
+                    </div>
+                    <div class="card" onclick="window.open('https://chat.whatsapp.com/Gj3zwq31supBLcqh20vLB7', '_blank')">
+                        <img src="/api/placeholder/60/60" alt="Chat Icon">
+                        <h3>Chat General</h3>
+                        <p>Únete a nuestro grupo general de WhatsApp 📬</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300" alt="Información">
-                <h2>Información</h2>
-                <p>Consulta los requisitos, reglas y toda la información relevante sobre la carrera de Informática Industrial.</p>
+        </section>
+
+        <section class="section info">
+            <h2 class="section-title">Información</h2>
+            <div class="cards-container">
+                <div class="cards">
+                    <div class="card" onclick="window.open('https://telegra.ph/REQUISITOS-01-31', '_blank')">
+                        <img src="/api/placeholder/60/60" alt="Requirements Icon">
+                        <h3>Requisitos Para Los Grupos</h3>
+                        <p>Conoce los requisitos necesarios para unirte 📖</p>
+                    </div>
+                    <div class="card" onclick="window.open('https://telegra.ph/REGLAS-DE-LOS-GRUPOS-01-31', '_blank')">
+                        <img src="/api/placeholder/60/60" alt="Rules Icon">
+                        <h3>Reglas De Los Grupos</h3>
+                        <p>Revisa las reglas de nuestra comunidad 📊</p>
+                    </div>
+                    <div class="card" onclick="window.open('https://telegra.ph/ITSO-07-31', '_blank')">
+                        <img src="/api/placeholder/60/60" alt="Info Icon">
+                        <h3>Información Sobre La Carrera</h3>
+                        <p>Descubre todo sobre Informática Industrial ❓</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 </body>
 </html>
