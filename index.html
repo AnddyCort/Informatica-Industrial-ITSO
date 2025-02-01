@@ -43,6 +43,15 @@
             }
         }
 
+        @keyframes cardShine {
+            0% {
+                background-position: -100% -100%;
+            }
+            100% {
+                background-position: 200% 200%;
+            }
+        }
+
         body {
             background: #161622;
             font-family: 'Inter', sans-serif;
@@ -161,28 +170,49 @@
             transition: transform 0.3s ease;
             cursor: pointer;
             animation: slideIn 0.5s ease-out forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200px; /* Tarjetas más alargadas */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.05),
+                rgba(255, 255, 255, 0.1)
+            );
+            animation: cardShine 3s infinite linear;
+            opacity: 0.5;
+            z-index: 1;
         }
 
         .card:hover {
             transform: translateY(-5px);
         }
 
-        .card img {
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-
         .card h3 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 2;
         }
 
         .card p {
-            color: #b4b4cc;
+            color: #e0e0e0; /* Texto más claro */
             margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 2;
         }
 
         /* Colores específicos por sección */
@@ -239,6 +269,7 @@
 
             .card {
                 flex: 0 0 250px;
+                height: 180px; /* Ajuste para móviles */
             }
         }
 
@@ -249,6 +280,7 @@
 
             .card {
                 flex: 0 0 200px;
+                height: 160px; /* Ajuste para móviles pequeños */
             }
         }
     </style>
@@ -274,12 +306,10 @@
             <div class="cards-container">
                 <div class="cards">
                     <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=org.telegram.messenger', '_blank')">
-                        <img src="/api/placeholder/60/60" alt="Telegram Icon">
                         <h3>Descargar Telegram</h3>
                         <p>Obtén la aplicación oficial de Telegram para unirte a nuestros grupos 📱</p>
                     </div>
                     <div class="card" onclick="window.open('https://t.me/+VJrNYJire-phNGFh', '_blank')">
-                        <img src="/api/placeholder/60/60" alt="Group Icon">
                         <h3>Grupo Principal</h3>
                         <p>Únete a nuestro grupo principal de Telegram 💬</p>
                     </div>
@@ -292,12 +322,10 @@
             <div class="cards-container">
                 <div class="cards">
                     <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=com.discord', '_blank')">
-                        <img src="/api/placeholder/60/60" alt="Discord Icon">
                         <h3>Descargar Discord</h3>
                         <p>Descarga Discord para unirte a nuestra comunidad 🎮</p>
                     </div>
                     <div class="card" onclick="window.open('https://discord.gg/xscuXT5E', '_blank')">
-                        <img src="/api/placeholder/60/60" alt="Server Icon">
                         <h3>Servidor Oficial</h3>
                         <p>Únete a nuestro servidor oficial de Discord 🎯</p>
                     </div>
@@ -310,12 +338,10 @@
             <div class="cards-container">
                 <div class="cards">
                     <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=com.whatsapp', '_blank')">
-                        <img src="/api/placeholder/60/60" alt="WhatsApp Icon">
                         <h3>Descargar WhatsApp</h3>
                         <p>Obtén WhatsApp para unirte a nuestros grupos ❇️</p>
                     </div>
                     <div class="card" onclick="window.open('https://chat.whatsapp.com/Gj3zwq31supBLcqh20vLB7', '_blank')">
-                        <img src="/api/placeholder/60/60" alt="Chat Icon">
                         <h3>Chat General</h3>
                         <p>Únete a nuestro grupo general de WhatsApp 📬</p>
                     </div>
@@ -328,17 +354,14 @@
             <div class="cards-container">
                 <div class="cards">
                     <div class="card" onclick="window.open('https://telegra.ph/REQUISITOS-01-31', '_blank')">
-                        <img src="/api/placeholder/60/60" alt="Requirements Icon">
                         <h3>Requisitos Para Los Grupos</h3>
                         <p>Conoce los requisitos necesarios para unirte 📖</p>
                     </div>
                     <div class="card" onclick="window.open('https://telegra.ph/REGLAS-DE-LOS-GRUPOS-01-31', '_blank')">
-                        <img src="/api/placeholder/60/60" alt="Rules Icon">
                         <h3>Reglas De Los Grupos</h3>
                         <p>Revisa las reglas de nuestra comunidad 📊</p>
                     </div>
                     <div class="card" onclick="window.open('https://telegra.ph/ITSO-07-31', '_blank')">
-                        <img src="/api/placeholder/60/60" alt="Info Icon">
                         <h3>Información Sobre La Carrera</h3>
                         <p>Descubre todo sobre Informática Industrial ❓</p>
                     </div>
