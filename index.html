@@ -11,47 +11,6 @@
             box-sizing: border-box;
         }
 
-        @keyframes floating {
-            0%, 100% { transform: translateY(0) rotate(1deg); }
-            25% { transform: translateY(-12px) rotate(-1deg); }
-            50% { transform: translateY(0) rotate(1deg); }
-            75% { transform: translateY(12px) rotate(-1deg); }
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes aurora {
-            0% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(10px, -10px) scale(1.1); }
-            50% { transform: translate(0, 0) scale(1); }
-            75% { transform: translate(-10px, 10px) scale(0.9); }
-            100% { transform: translate(0, 0) scale(1); }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes cardShine {
-            0% {
-                background-position: -100% -100%;
-            }
-            100% {
-                background-position: 200% 200%;
-            }
-        }
-
         body {
             background: #161622;
             font-family: 'Inter', sans-serif;
@@ -161,57 +120,37 @@
         }
 
         .card {
-            flex: 0 0 300px;
+            flex: 0 0 auto;
             background: rgba(28, 28, 40, 0.95);
             border-radius: 15px;
             padding: 1.5rem;
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            animation: slideIn 0.5s ease-out forwards;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            height: 200px; /* Tarjetas más alargadas */
+            justify-content: center;
+            min-width: 300px; /* Ancho mínimo para las tarjetas */
+            max-width: 400px; /* Ancho máximo para las tarjetas */
             position: relative;
             overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                120deg,
-                rgba(255, 255, 255, 0.1),
-                rgba(255, 255, 255, 0.05),
-                rgba(255, 255, 255, 0.1)
-            );
-            animation: cardShine 3s infinite linear;
-            opacity: 0.5;
-            z-index: 1;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
         }
 
         .card h3 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: #fff;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.5); /* Fondo translúcido para el título */
+            padding: 0.5rem;
+            border-radius: 8px;
             z-index: 2;
         }
 
         .card p {
-            color: #e0e0e0; /* Texto más claro */
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            color: #e0e0e0;
+            margin-bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Fondo translúcido para la descripción */
+            padding: 0.5rem;
+            border-radius: 8px;
             z-index: 2;
         }
 
@@ -268,8 +207,7 @@
             }
 
             .card {
-                flex: 0 0 250px;
-                height: 180px; /* Ajuste para móviles */
+                min-width: 250px; /* Ajuste para móviles */
             }
         }
 
@@ -279,8 +217,7 @@
             }
 
             .card {
-                flex: 0 0 200px;
-                height: 160px; /* Ajuste para móviles pequeños */
+                min-width: 200px; /* Ajuste para móviles pequeños */
             }
         }
     </style>
