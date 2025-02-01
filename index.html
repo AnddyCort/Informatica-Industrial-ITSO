@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informática Industrial</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #161622;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            background: rgba(28, 28, 40, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            color: #b4b4cc;
+        }
+
+        /* Cards Section */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: rgba(28, 28, 40, 0.95);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-100%);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card.slide-right {
+            transform: translateX(100%);
+        }
+
+        .card.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+
+        .card-description {
+            color: #b4b4cc;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .aurora {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .aurora div {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+
+        .aurora div:nth-child(1) {
+            background: rgba(64, 169, 255, 0.2);
+            top: -300px;
+            left: -300px;
+        }
+
+        .aurora div:nth-child(2) {
+            background: rgba(88, 101, 242, 0.2);
+            bottom: -300px;
+            right: -300px;
+        }
+
+        .aurora div:nth-child(3) {
+            background: rgba(37, 211, 102, 0.2);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aurora">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <img class="profile-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLAmpg0IzxBl_EJjh3QDlKW2YMCxxlfRARnRwyn-ah9sTPeAPEp7f9-_ogUfGlgFhzeqM_K2CXhcXEhjTbph0XgQaAZbAlcOxadwxk7_EM65zzU4zq4QMPnqK57I6NpjdbzwJiVThydas4GQD2X8ffVgUqVWRfQOmQSi4-ypDcTXPUhUWpQRiAGCbpVMPT/s785/93a9c92bbda618c1831d00ab1c85e2e0.jpg" alt="Logo Institucional">
+            <div class="header-content">
+                <h1>ɪɴꜰᴏʀᴍᴀᴛɪᴄᴀ ɪɴᴅᴜsᴛʀɪᴀʟ</h1>
+                <p class="description">🤝🏻 Bienvenido a nuestra comunidad. Aquí encontrarás todos 🗂 los grupos oficiales de la carrera de 💻 Informatica Industrial.⚡️ ¡Únete y mantente conectado! 🚀</p>
+            </div>
+        </header>
+
+        <section class="section telegram">
+            <h2 class="section-title">Grupos en Telegram</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img class="card-icon" src="/api/placeholder/60/60" alt="Telegram App">
+                    <h3 class="card-title">Descargar Telegram</h3>
+                    <p class="card-description">Descarga la aplicación oficial de Telegram para unirte a nuestra comunidad.</p>
+                    <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" class="card-button" target="_blank">Descargar 📱</a>
+                </div>
+                <div class="card slide-right">
+                    <img class="card-icon" src="/api/placeholder/60/60" alt="Grupo Principal">
+                    <h3 class="card-title">Grupo Principal</h3>
+                    <p class="card-description">Únete a nuestro grupo principal de Telegram para estar al día con todas las novedades.</p>
+                    <a href="https://t.me/+VJrNYJire-phNGFh" class="card-button" target="_blank">Unirse 💬</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section discord">
+            <h2 class="section-title">Grupos en Discord</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img class="card-icon" src="/api/placeholder/60/60" alt="Discord App">
+                    <h3 class="card-title">Descargar Discord</h3>
+                    <p class="card-description">Descarga Discord y únete a nuestra comunidad de gaming y estudio.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.discord" class="card-button" target="_blank">Descargar 🎮</a>
+                </div>
+                <div class="card slide-right">
+                    <img class="card-icon" src="/api/placeholder/60/60" alt="Servidor Discord">
+                    <h3 class="card-title">Servidor Oficial</h3>
+                    <p class="card-description">Únete a nuestro servidor oficial de Discord para compartir y aprender.</p>
+                    <a href="https://discord.gg/xscuXT5E" class="card-button" target="_blank">Unirse 🎯</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section whatsapp">
+            <h2 class="section-title">Grupos en WhatsApp</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img class="card-icon" src="/api/placeholder/60/60" alt="WhatsApp App">
+                    <h3 class="card-title">Descargar WhatsApp</h3>
+                    <p class="card-description">Descarga WhatsApp para unirte a nuestros grupos de comunicación.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.whatsapp" class="card-button" target="_blank">Descargar ❇️</a>
+                </div>
+                <div class="card slide-right">
+                    <img class="card-icon" src="/api/placeholder/60/60" alt="Chat General">
+                    <h3 class="card-title">Chat General</h3>
+                    <p class="card-description">Únete a nuestro grupo general de WhatsApp para estar conectado.</p>
+                    <a href="https://chat.whatsapp.com/Gj3zwq31supBLcqh20vLB7" class="card-button" target="_blank">Unirse 📬</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section info">
+            <h2 class="section-title">Información</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img class="card-icon" src="/api/placeholder/60/60" alt="Requisitos">
+                    <h3 class="card-title">Requisitos Para Los Grupos</h3>
+                    <p class="card-description">Conoce los requisitos necesarios para unirte a nuestros grupos.</p>
+                    <a href="https://telegra.ph/REQUISITOS-01-31" class="card-button" target="_blank">Ver más 📖</a>
+                </div>
+                <div class="card slide-right">
+                    <img class="card-icon" src="/api/placeholder/60/60" alt="Reglas">
+                    <h3 class="card-title">Reglas De Los Grupos</h3>
+                    <p class="card-description">Consulta las reglas que debemos seguir en nuestra comunidad.</p>
+                    <a href="https://telegra.ph/REGLAS-DE-LOS-GRUPOS-01-31" class="card-button" target="_blank">Ver más 📊</a>
+                </div>
+                <div class="card">
+                    <img class="card-icon" src="/api/placeholder/60/60" alt="Información">
+                    <h3 class="card-title">Información Sobre La Carrera</h3>
+                    <p class="card-description">Conoce más detalles sobre la carrera de Informática Industrial.</p>
+                    <a href="https://telegra.ph/ITSO-07-31" class="card-button" target="_blank">Ver más ❓</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function checkCards() {
+                cards.forEach(card => {
+                    if (isInViewport(card) && !card.classList.contains('animate')) {
+                        card.classList.add('animate');
+                    }
+                });
+            }
+
+            // Verificar las tarjetas al cargar y al hacer scroll
+            checkCards();
+            window.addEventListener('scroll', checkCards);
+        });
+    </script>
+</body>
+</html>
