@@ -5,135 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informática Industrial</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
             font-family: 'Inter', sans-serif;
             background: #161622;
             color: #fff;
-            line-height: 1.6;
-            min-height: 100vh;
             overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Header Section */
-        .header {
-            display: flex;
-            align-items: flex-start;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            background: rgba(28, 28, 40, 0.95);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 20px;
-            object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .header-content {
-            flex: 1;
-        }
-
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .description {
-            color: #b4b4cc;
-        }
-
-        /* Cards Section */
-        .section {
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: rgba(28, 28, 40, 0.95);
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateX(-100%);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card.slide-right {
-            transform: translateX(100%);
-        }
-
-        .card.animate {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            object-fit: cover;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            color: #fff;
-        }
-
-        .card-description {
-            color: #b4b4cc;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .card-button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .card-button:hover {
-            transform: translateY(-2px);
         }
 
         .aurora {
@@ -143,7 +21,7 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            z-index: -1;
+            z-index: 0;
         }
 
         .aurora div {
@@ -152,6 +30,7 @@
             height: 600px;
             border-radius: 50%;
             filter: blur(100px);
+            animation: aurora 15s infinite;
         }
 
         .aurora div:nth-child(1) {
@@ -173,7 +52,127 @@
             transform: translate(-50%, -50%);
         }
 
-        /* Responsive Design */
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .title {
+            text-align: right;
+            color: #fff;
+            font-size: 28px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .description {
+            color: #b4b4cc;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.6;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background: rgba(28, 28, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: calc(25% - 20px);
+            min-width: 250px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+            animation: slide-in 1s ease-out;
+        }
+
+        .card:nth-child(odd) {
+            animation: slide-in-left 1s ease-out;
+        }
+
+        .card:nth-child(even) {
+            animation: slide-in-right 1s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #b4b4cc;
+            line-height: 1.5;
+        }
+
+        @keyframes aurora {
+            0% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(10px, -10px) scale(1.1); }
+            50% { transform: translate(0, 0) scale(1); }
+            75% { transform: translate(-10px, 10px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        @keyframes slide-in-left {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slide-in-right {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -181,22 +180,23 @@
                 text-align: center;
             }
 
-            .profile-img {
-                width: 150px;
-                height: 150px;
+            .title {
+                text-align: center;
+                margin-top: 20px;
             }
 
-            .header-content h1 {
-                font-size: 2rem;
+            .card {
+                width: calc(50% - 20px);
             }
+        }
 
-            .cards-container {
-                grid-template-columns: 1fr;
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
             }
         }
     </style>
 </head>
-
 <body>
     <div class="aurora">
         <div></div>
@@ -204,120 +204,37 @@
         <div></div>
     </div>
 
-    <div class="container">
-        <header class="header">
-            <img class="profile-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLAmpg0IzxBl_EJjh3QDlKW2YMCxxlfRARnRwyn-ah9sTPeAPEp7f9-_ogUfGlgFhzeqM_K2CXhcXEhjTbph0XgQaAZbAlcOxadwxk7_EM65zzU4zq4QMPnqK57I6NpjdbzwJiVThydas4GQD2X8ffVgUqVWRfQOmQSi4-ypDcTXPUhUWpQRiAGCbpVMPT/s785/93a9c92bbda618c1831d00ab1c85e2e0.jpg" alt="Logo Institucional">
-            <div class="header-content">
+    <div class="page-wrapper">
+        <div class="header">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLAmpg0IzxBl_EJjh3QDlKW2YMCxxlfRARnRwyn-ah9sTPeAPEp7f9-_ogUfGlgFhzeqM_K2CXhcXEhjTbph0XgQaAZbAlcOxadwxk7_EM65zzU4zq4QMPnqK57I6NpjdbzwJiVThydas4GQD2X8ffVgUqVWRfQOmQSi4-ypDcTXPUhUWpQRiAGCbpVMPT/s785/93a9c92bbda618c1831d00ab1c85e2e0.jpg" alt="Logo Institucional" class="profile-img">
+            <div class="title">
                 <h1>ɪɴꜰᴏʀᴍᴀᴛɪᴄᴀ ɪɴᴅᴜsᴛʀɪᴀʟ</h1>
-                <p class="description">🤝🏻 Bienvenido a nuestra comunidad. Aquí encontrarás todos 🗂 los grupos oficiales de la carrera de 💻 Informatica Industrial.⚡️ ¡Únete y mantente conectado! 🚀</p>
+                <p class="description">🤝🏻𝑩𝒊𝒆𝒏𝒗𝒆𝒏𝒊𝒅𝒐 𝒂 𝒏𝒖𝒆𝒔𝒕𝒓𝒂 𝒄𝒐𝒎𝒖𝒏𝒊𝒅𝒂𝒅. 𝑨𝒒𝒖𝒊 𝒆𝒏𝒄𝒐𝒏𝒕𝒓𝒂𝒓𝒂𝒔 𝒕𝒐𝒅𝒐𝒔 🗂 𝒍𝒐𝒔 𝒈𝒓𝒖𝒑𝒐𝒔 𝒐𝒇𝒊𝒄𝒊𝒂𝒍𝒆𝒔 𝒅𝒆 𝒍𝒂 𝒄𝒂𝒓𝒓𝒆𝒓𝒂 𝒅𝒆 💻 𝑰𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒄𝒂 𝑰𝒏𝒅𝒖𝒔𝒕𝒓𝒊𝒂𝒍.⚡️ ¡𝑼𝒏𝒆𝒕𝒆 𝒚 𝒎𝒂𝒏𝒕𝒆𝒏𝒕𝒆 𝒄𝒐𝒏𝒆𝒄𝒕𝒂𝒅𝒐! 🚀</p>
             </div>
-        </header>
+        </div>
 
-        <section class="section telegram">
-            <h2 class="section-title">Grupos en Telegram</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <img class="card-icon" src="/api/placeholder/60/60" alt="Telegram App">
-                    <h3 class="card-title">Descargar Telegram</h3>
-                    <p class="card-description">Descarga la aplicación oficial de Telegram para unirte a nuestra comunidad.</p>
-                    <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" class="card-button" target="_blank">Descargar 📱</a>
-                </div>
-                <div class="card slide-right">
-                    <img class="card-icon" src="/api/placeholder/60/60" alt="Grupo Principal">
-                    <h3 class="card-title">Grupo Principal</h3>
-                    <p class="card-description">Únete a nuestro grupo principal de Telegram para estar al día con todas las novedades.</p>
-                    <a href="https://t.me/+VJrNYJire-phNGFh" class="card-button" target="_blank">Unirse 💬</a>
-                </div>
+        <div class="cards-container">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Telegram">
+                <h2>Grupos en Telegram</h2>
+                <p>Descarga Telegram y únete a nuestros grupos oficiales para mantenerte conectado con la comunidad.</p>
             </div>
-        </section>
-
-        <section class="section discord">
-            <h2 class="section-title">Grupos en Discord</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <img class="card-icon" src="/api/placeholder/60/60" alt="Discord App">
-                    <h3 class="card-title">Descargar Discord</h3>
-                    <p class="card-description">Descarga Discord y únete a nuestra comunidad de gaming y estudio.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.discord" class="card-button" target="_blank">Descargar 🎮</a>
-                </div>
-                <div class="card slide-right">
-                    <img class="card-icon" src="/api/placeholder/60/60" alt="Servidor Discord">
-                    <h3 class="card-title">Servidor Oficial</h3>
-                    <p class="card-description">Únete a nuestro servidor oficial de Discord para compartir y aprender.</p>
-                    <a href="https://discord.gg/xscuXT5E" class="card-button" target="_blank">Unirse 🎯</a>
-                </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Discord">
+                <h2>Grupos en Discord</h2>
+                <p>Únete a nuestro servidor de Discord para participar en discusiones y eventos en tiempo real.</p>
             </div>
-        </section>
-
-        <section class="section whatsapp">
-            <h2 class="section-title">Grupos en WhatsApp</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <img class="card-icon" src="/api/placeholder/60/60" alt="WhatsApp App">
-                    <h3 class="card-title">Descargar WhatsApp</h3>
-                    <p class="card-description">Descarga WhatsApp para unirte a nuestros grupos de comunicación.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.whatsapp" class="card-button" target="_blank">Descargar ❇️</a>
-                </div>
-                <div class="card slide-right">
-                    <img class="card-icon" src="/api/placeholder/60/60" alt="Chat General">
-                    <h3 class="card-title">Chat General</h3>
-                    <p class="card-description">Únete a nuestro grupo general de WhatsApp para estar conectado.</p>
-                    <a href="https://chat.whatsapp.com/Gj3zwq31supBLcqh20vLB7" class="card-button" target="_blank">Unirse 📬</a>
-                </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="WhatsApp">
+                <h2>Grupos en WhatsApp</h2>
+                <p>Conéctate con tus compañeros a través de nuestros grupos de WhatsApp para compartir información y recursos.</p>
             </div>
-        </section>
-
-        <section class="section info">
-            <h2 class="section-title">Información</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <img class="card-icon" src="/api/placeholder/60/60" alt="Requisitos">
-                    <h3 class="card-title">Requisitos Para Los Grupos</h3>
-                    <p class="card-description">Conoce los requisitos necesarios para unirte a nuestros grupos.</p>
-                    <a href="https://telegra.ph/REQUISITOS-01-31" class="card-button" target="_blank">Ver más 📖</a>
-                </div>
-                <div class="card slide-right">
-                    <img class="card-icon" src="/api/placeholder/60/60" alt="Reglas">
-                    <h3 class="card-title">Reglas De Los Grupos</h3>
-                    <p class="card-description">Consulta las reglas que debemos seguir en nuestra comunidad.</p>
-                    <a href="https://telegra.ph/REGLAS-DE-LOS-GRUPOS-01-31" class="card-button" target="_blank">Ver más 📊</a>
-                </div>
-                <div class="card">
-                    <img class="card-icon" src="/api/placeholder/60/60" alt="Información">
-                    <h3 class="card-title">Información Sobre La Carrera</h3>
-                    <p class="card-description">Conoce más detalles sobre la carrera de Informática Industrial.</p>
-                    <a href="https://telegra.ph/ITSO-07-31" class="card-button" target="_blank">Ver más ❓</a>
-                </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Información">
+                <h2>Información</h2>
+                <p>Consulta los requisitos, reglas y toda la información relevante sobre la carrera de Informática Industrial.</p>
             </div>
-        </section>
+        </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card');
-            
-            function isInViewport(element) {
-                const rect = element.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-
-            function checkCards() {
-                cards.forEach(card => {
-                    if (isInViewport(card) && !card.classList.contains('animate')) {
-                        card.classList.add('animate');
-                    }
-                });
-            }
-
-            // Verificar las tarjetas al cargar y al hacer scroll
-            checkCards();
-            window.addEventListener('scroll', checkCards);
-        });
-    </script>
 </body>
 </html>
