@@ -1,0 +1,386 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Variables y configuración inicial */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    --primary: #6366F1;
+    --secondary: #8B5CF6;
+    --accent: #F472B6;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --hover-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* Efectos de fondo animados */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Header y Navegación */
+header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    overflow-x: auto;
+    padding: 0.5rem;
+    scrollbar-width: none;
+}
+
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border-radius: 9999px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    background-size: 200% 200%;
+    transition: var(--hover-transition);
+}
+
+.nav-links a:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    padding: 8rem 2rem;
+    text-align: center;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.hero img {
+    max-width: 900px;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transform: perspective(1000px) rotateX(5deg);
+}
+
+/* Horario */
+.horario {
+    padding: 4rem 2rem;
+}
+
+.tabla-horario {
+    overflow-x: auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    border: 1px solid var(--glass-border);
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: var(--text-primary);
+    padding: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--glass-border);
+    transition: var(--hover-transition);
+}
+
+tr:hover td {
+    background: var(--glass-bg);
+}
+
+.receso {
+    background: linear-gradient(45deg, var(--warning), var(--accent));
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Docentes */
+.grid-docentes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.docente-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--hover-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.docente-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: var(--hover-transition);
+    z-index: -1;
+}
+
+.docente-card:hover::before {
+    opacity: 0.1;
+}
+
+.docente-card:hover {
+    transform: translateY(-5px);
+}
+
+.docente-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    margin-bottom: 1.5rem;
+    transition: var(--hover-transition);
+}
+
+.docente-card:hover img {
+    transform: scale(1.05);
+    border-color: var(--secondary);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: var(--hover-transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Recursos y Videos */
+.recursos {
+    padding: 4rem 2rem;
+}
+
+.carousel {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.video-container {
+    flex: 0 0 400px;
+    scroll-snap-align: start;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: var(--hover-transition);
+}
+
+.video-container:hover {
+    transform: translateY(-5px);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.carousel-controls button {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border: none;
+    border-radius: 9999px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--hover-transition);
+}
+
+.carousel-controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Contactos */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.contacto-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: var(--hover-transition);
+}
+
+.contacto-card:hover {
+    transform: translateY(-5px);
+}
+
+.contacto-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contacto-card p {
+    color: var(--text-secondary);
+    word-break: break-word;
+}
+
+/* Footer */
+footer {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--glass-border);
+    padding: 3rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .docente-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .video-container {
+        flex: 0 0 300px;
+    }
+}
