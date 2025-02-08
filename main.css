@@ -384,47 +384,226 @@ body {
   padding: 0 2rem;
 }
 
-/* Media queries */
-@media (max-width: 768px) {
+/* Media queries mejorados */
+/* Dispositivos grandes (≥1200px) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  .docentes, .contactos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .video-carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+  }
+
+  .video-card {
+    min-width: auto;
+  }
+}
+
+/* Dispositivos medianos (≥992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .docentes, .contactos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 2.25rem;
+  }
+}
+
+/* Tablets (≥768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+
   .navbar {
+    flex-direction: column;
+    gap: 1rem;
     padding: 1rem;
   }
 
   .nav-links {
-    padding-bottom: 0.5rem;
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
   }
 
-  .horario-title {
-    font-size: 2rem;
+  .docentes, .contactos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .header {
+    margin-top: 7rem;
+  }
+
+  .video-carousel {
+    padding: 1rem;
   }
 
   .video-card {
-    min-width: 300px;
+    min-width: 280px;
   }
+}
 
-  .docentes {
-    grid-template-columns: 1fr;
-  }
-
+/* Móviles grandes (≥576px) */
+@media (min-width: 576px) and (max-width: 767px) {
   .container {
+    max-width: 540px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    margin-left: 0;
+    width: 100%;
+    justify-content: start;
+  }
+
+  .docentes, .contactos {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .header {
+    margin-top: 8rem;
+    padding: 2rem 1rem;
+  }
+
+  .horario-scroll {
     padding: 0 1rem;
   }
 }
 
-@media (max-width: 480px) {
-  .theme-toggle {
-    min-width: auto;
+/* Móviles pequeños (<576px) */
+@media (max-width: 575px) {
+  .container {
+    width: 100%;
+    padding: 0 1rem;
   }
 
-  .theme-toggle span {
-    display: none;
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    margin-left: 0;
+    width: 100%;
+    justify-content: start;
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .header {
+    margin-top: 7rem;
+    padding: 1.5rem 1rem;
   }
 
   .header h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .logo {
+    width: 120px;
+    height: 120px;
   }
 
   .horario-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
+
+  .docentes, .contactos {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .docente-card, .contacto-card {
+    padding: 1.5rem;
+  }
+
+  .video-carousel {
+    padding: 1rem;
+  }
+
+  .video-card {
+    min-width: 260px;
+    padding: 1rem;
+  }
+
+  .grupo-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Mejoras generales de responsividad */
+.horario-scroll table {
+  margin: 0 auto;
+}
+
+.video-carousel {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+}
+
+.video-carousel::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  display: block;
+}
+
+.video-carousel::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 3px;
+}
+
+.video-carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Mejoras generales de responsividad */
+.horario-scroll table {
+  margin: 0 auto;
+}
+
+.video-carousel {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+}
+
+.video-carousel::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  display: block;
+}
+
+.video-carousel::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 3px;
+}
+
+.video-carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
 }
