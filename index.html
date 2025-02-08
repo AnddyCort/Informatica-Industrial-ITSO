@@ -3,369 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informática Industrial</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #161622;
-            font-family: 'Inter', sans-serif;
-            color: #fff;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        @keyframes aurora {
-            0% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(10px, -10px) scale(1.1); }
-            50% { transform: translate(0, 0) scale(1); }
-            75% { transform: translate(-10px, 10px) scale(0.9); }
-            100% { transform: translate(0, 0) scale(1); }
-        }
-
-        .aurora {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .aurora div {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            filter: blur(100px);
-            animation: aurora 15s infinite;
-        }
-
-        .aurora div:nth-child(1) {
-            background: rgba(64, 169, 255, 0.2);
-            top: -300px;
-            left: -300px;
-        }
-
-        .aurora div:nth-child(2) {
-            background: rgba(88, 101, 242, 0.2);
-            bottom: -300px;
-            right: -300px;
-        }
-
-        .aurora div:nth-child(3) {
-            background: rgba(37, 211, 102, 0.2);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            background: rgba(28, 28, 40, 0.95);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
-            animation: fadeIn 1s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 20px;
-            object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.05);
-        }
-
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .header-content p {
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-
-        .section {
-            margin-bottom: 3rem;
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            display: inline-block;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .cards-container {
-            width: 100%;
-            overflow-x: auto;
-            padding: 1rem 0;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .cards-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .cards {
-            display: flex;
-            gap: 1.5rem;
-            padding: 0.5rem;
-        }
-
-        .card {
-            flex: 0 0 auto;
-            background: rgba(28, 28, 40, 0.95);
-            border-radius: 15px;
-            padding: 1.5rem;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            aspect-ratio: 16 / 9;
-            min-width: 250px;
-            max-width: 400px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            animation: cardEntrance 0.5s ease-out;
-        }
-
-        @keyframes cardEntrance {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 0.5rem;
-            border-radius: 8px;
-            display: inline-block;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .card p {
-            color: #e0e0e0;
-            margin-bottom: 0.5rem;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 0.5rem;
-            border-radius: 8px;
-            display: inline-block;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Colores específicos por sección */
-        .telegram .section-title {
-            color: #40a9ff;
-            border-color: rgba(64, 169, 255, 0.3);
-        }
-
-        .telegram .card {
-            background: linear-gradient(45deg, #1d93d2, #40a9ff);
-        }
-
-        .discord .section-title {
-            color: #5865f2;
-            border-color: rgba(88, 101, 242, 0.3);
-        }
-
-        .discord .card {
-            background: linear-gradient(45deg, #404eed, #5865f2);
-        }
-
-        .whatsapp .section-title {
-            color: #25d366;
-            border-color: rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp .card {
-            background: linear-gradient(45deg, #128c7e, #25d366);
-        }
-
-        .info .section-title {
-            color: #ff6b9f;
-            border-color: rgba(255, 107, 159, 0.3);
-        }
-
-        .info .card {
-            background: linear-gradient(45deg, #ff4785, #ff6b9f);
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-
-            .header-content h1 {
-                font-size: 2rem;
-            }
-
-            .card {
-                min-width: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 1rem;
-            }
-
-            .card {
-                min-width: 180px;
-            }
-        }
-    </style>
+    <title>Informática Industrial - Segundo Semestre</title>
+    <link rel="stylesheet" href="claude.css">
 </head>
 <body>
-    <div class="aurora">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <div class="container">
-        <header class="header">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLAmpg0IzxBl_EJjh3QDlKW2YMCxxlfRARnRwyn-ah9sTPeAPEp7f9-_ogUfGlgFhzeqM_K2CXhcXEhjTbph0XgQaAZbAlcOxadwxk7_EM65zzU4zq4QMPnqK57I6NpjdbzwJiVThydas4GQD2X8ffVgUqVWRfQOmQSi4-ypDcTXPUhUWpQRiAGCbpVMPT/s785/93a9c92bbda618c1831d00ab1c85e2e0.jpg" alt="Logo Institucional" class="profile-img">
-            <div class="header-content">
-                <h1>ɪɴꜰᴏʀᴍᴀᴛɪᴄᴀ ɪɴᴅᴜsᴛʀɪᴀʟ</h1>
-                <p>🤝🏻 Bienvenido a nuestra comunidad. Aquí encontrarás todos 🗂 los grupos oficiales de la carrera de 💻 Informática Industrial.⚡️ ¡Únete y mantente conectado! 🚀</p>
+    <!-- Encabezado -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/api/placeholder/150/50" alt="Logo Informática">
             </div>
-        </header>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#horario">Horario</a></li>
+                <li><a href="#docentes">Docentes</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section class="section telegram">
-            <h2 class="section-title">Grupos en Telegram</h2>
-            <div class="cards-container">
-                <div class="cards">
-                    <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=org.telegram.messenger', '_blank')">
-                        <h3>Descargar Telegram</h3>
-                        <p>Obtén la aplicación oficial de Telegram para unirte a nuestros grupos 📱</p>
-                        <p>Descarga desde Google Play o App Store.</p>
-                    </div>
-                    <div class="card" onclick="window.open('https://t.me/+VJrNYJire-phNGFh', '_blank')">
-                        <h3>Grupo Principal</h3>
-                        <p>Únete a nuestro grupo principal de Telegram 💬</p>
-                        <p>Comparte dudas, recursos y más.</p>
-                    </div>
-                </div>
+    <!-- Sección Principal -->
+    <main>
+        <section id="inicio" class="hero">
+            <h1>Informática Industrial</h1>
+            <h2>Segundo Semestre</h2>
+            <img src="/api/placeholder/800/400" alt="Banner Informática Industrial">
+            <p>Formando profesionales en el área de la informática industrial</p>
+        </section>
+
+        <!-- Horario Académico -->
+        <section id="horario" class="horario">
+            <h2>Horario Académico</h2>
+            <div class="tabla-horario">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Materias antes del receso -->
+                        <tr>
+                            <td>8:00 - 9:30</td>
+                            <td>Programación I</td>
+                            <td>Matemáticas</td>
+                            <td>Electrónica</td>
+                            <td>Programación I</td>
+                            <td>Matemáticas</td>
+                        </tr>
+                        <tr>
+                            <td>9:30 - 11:00</td>
+                            <td>Electrónica</td>
+                            <td>Física</td>
+                            <td>Matemáticas</td>
+                            <td>Física</td>
+                            <td>Electrónica</td>
+                        </tr>
+                        <!-- Receso -->
+                        <tr class="receso">
+                            <td colspan="6">Receso: 11:00 - 11:30</td>
+                        </tr>
+                        <!-- Materias después del receso -->
+                        <tr>
+                            <td>11:30 - 13:00</td>
+                            <td>Redes</td>
+                            <td>Sistemas</td>
+                            <td>Base de Datos</td>
+                            <td>Redes</td>
+                            <td>Sistemas</td>
+                        </tr>
+                      <tr>
+                            <td>11:30 - 13:00</td>
+                            <td>Redes</td>
+                            <td>Sistemas</td>
+                            <td>Base de Datos</td>
+                            <td>Redes</td>
+                            <td>Sistemas</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
-        <section class="section discord">
-            <h2 class="section-title">Grupos en Discord</h2>
-            <div class="cards-container">
-                <div class="cards">
-                    <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=com.discord', '_blank')">
-                        <h3>Descargar Discord</h3>
-                        <p>Descarga Discord para unirte a nuestra comunidad 🎮</p>
-                        <p>Disponible en múltiples plataformas.</p>
-                    </div>
-                    <div class="card" onclick="window.open('https://discord.gg/xscuXT5E', '_blank')">
-                        <h3>Servidor Oficial</h3>
-                        <p>Únete a nuestro servidor oficial de Discord 🎯</p>
-                        <p>Participa en eventos y chats en vivo.</p>
-                    </div>
+        <!-- Docentes -->
+        <section id="docentes" class="docentes">
+            <h2>Nuestros Docentes</h2>
+            <div class="grid-docentes">
+                <div class="docente-card">
+                    <img src="/api/placeholder/200/200" alt="Docente 1">
+                    <h3>Dr. Juan Pérez</h3>
+                    <p>Programación I</p>
+                    <a href="#" class="btn">Ver perfil</a>
                 </div>
+                <div class="docente-card">
+                    <img src="/api/placeholder/200/200" alt="Docente 2">
+                    <h3>Ing. María López</h3>
+                    <p>Electrónica</p>
+                    <a href="#" class="btn">Ver perfil</a>
+                </div>
+                <!-- Más tarjetas de docentes aquí -->
             </div>
         </section>
 
-        <section class="section whatsapp">
-            <h2 class="section-title">Grupos en WhatsApp</h2>
-            <div class="cards-container">
-                <div class="cards">
-                    <div class="card" onclick="window.open('https://play.google.com/store/apps/details?id=com.whatsapp', '_blank')">
-                        <h3>Descargar WhatsApp</h3>
-                        <p>Obtén WhatsApp para unirte a nuestros grupos ❇️</p>
-                        <p>Descarga desde Google Play o App Store.</p>
-                    </div>
-                    <div class="card" onclick="window.open('https://chat.whatsapp.com/Gj3zwq31supBLcqh20vLB7', '_blank')">
-                        <h3>Chat General</h3>
-                        <p>Únete a nuestro grupo general de WhatsApp 📬</p>
-                        <p>Comparte información y resuelve dudas.</p>
-                    </div>
+        <!-- Recursos y Videos -->
+        <section id="recursos" class="recursos">
+            <h2>Recursos Educativos</h2>
+            <div class="carousel">
+                <div class="video-container">
+                    <iframe src="about:blank" data-src="https://www.youtube.com/embed/video1" allowfullscreen></iframe>
+                    <h3>Introducción a la Programación</h3>
                 </div>
+                <div class="video-container">
+                    <iframe src="about:blank" data-src="https://www.youtube.com/embed/video2" allowfullscreen></iframe>
+                    <h3>Fundamentos de Electrónica</h3>
+                </div>
+                <!-- Más videos aquí -->
+            </div>
+            <div class="carousel-controls">
+                <button class="prev">&#8249;</button>
+                <button class="next">&#8250;</button>
             </div>
         </section>
 
-        <section class="section info">
-            <h2 class="section-title">Información</h2>
-            <div class="cards-container">
-                <div class="cards">
-                    <div class="card" onclick="window.open('https://telegra.ph/REQUISITOS-01-31', '_blank')">
-                        <h3>Requisitos Para Los Grupos</h3>
-                        <p>Conoce los requisitos necesarios para unirte 📖</p>
-                        <p>Lee las condiciones antes de participar.</p>
-                    </div>
-                    <div class="card" onclick="window.open('https://telegra.ph/REGLAS-DE-LOS-GRUPOS-01-31', '_blank')">
-                        <h3>Reglas De Los Grupos</h3>
-                        <p>Revisa las reglas de nuestra comunidad 📊</p>
-                        <p>Mantén un ambiente respetuoso.</p>
-                    </div>
-                    <div class="card" onclick="window.open('https://telegra.ph/ITSO-07-31', '_blank')">
-                        <h3>Información Sobre La Carrera</h3>
-                        <p>Descubre todo sobre Informática Industrial ❓</p>
-                        <p>Conoce el plan de estudios y más.</p>
-                    </div>
+        <!-- Contacto -->
+        <section id="contacto" class="contacto">
+            <h2>Contactos</h2>
+            <div class="contacto-grid">
+                <div class="contacto-card">
+                    <h3>Centro Estudiantil</h3>
+                    <p>Email: centro.estudiantil@universidad.edu</p>
+                    <p>Tel: (123) 456-7890</p>
+                </div>
+                <div class="contacto-card">
+                    <h3>Mesa Directiva</h3>
+                    <p>Email: mesa.directiva@universidad.edu</p>
+                    <p>Tel: (123) 456-7891</p>
+                </div>
+                <div class="contacto-card">
+                    <h3>Secretaría Académica</h3>
+                    <p>Email: secretaria@universidad.edu</p>
+                    <p>Tel: (123) 456-7892</p>
                 </div>
             </div>
         </section>
-    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Informática Industrial. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
