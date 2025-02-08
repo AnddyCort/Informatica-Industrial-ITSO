@@ -4,158 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informática Industrial - Segundo Semestre</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="pagina.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body>
-    <!-- Encabezado -->
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="/api/placeholder/150/50" alt="Logo Informática">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#horario">Horario</a></li>
-                <li><a href="#docentes">Docentes</a></li>
-                <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+            <span>Cambiar tema</span>
+        </button>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#grupos">Grupos</a>
+            <a href="#horario">Horario</a>
+            <a href="#material">Material</a>
+            <a href="#docentes">Docentes</a>
+            <a href="#contactos">Contactos</a>
+        </div>
+    </nav>
+
+    <!-- Cabecera -->
+    <header id="inicio" class="header">
+        <img src="/api/placeholder/150/150" alt="Logo Informática Industrial" class="logo">
+        <h1>Informática Industrial</h1>
+        <p>Segundo Semestre - Ciclo 2025</p>
+        <p>Formando profesionales en el área de la automatización y control industrial</p>
     </header>
 
-    <!-- Sección Principal -->
-    <main>
-        <section id="inicio" class="hero">
-            <h1>Informática Industrial</h1>
-            <h2>Segundo Semestre</h2>
-            <img src="/api/placeholder/800/400" alt="Banner Informática Industrial">
-            <p>Formando profesionales en el área de la informática industrial</p>
-        </section>
+    <!-- Grupos -->
+    <section id="grupos" class="grupos container">
+        <div class="horario-header">
+            <h2 class="horario-title">Grupos de Estudio</h2>
+        </div>
+        <div class="grupo-card">
+            <h3>Grupo Informática Industrial</h3>
+            <a href="#" class="social-button whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+            <a href="#" class="social-button telegram">
+                <i class="fab fa-telegram"></i>
+                Telegram
+            </a>
+            <a href="#" class="social-button discord">
+                <i class="fab fa-discord"></i>
+                Discord
+            </a>
+        </div>
+    </section>
 
-        <!-- Horario Académico -->
-        <section id="horario" class="horario">
-            <h2>Horario Académico</h2>
-            <div class="tabla-horario">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Hora</th>
-                            <th>Lunes</th>
-                            <th>Martes</th>
-                            <th>Miércoles</th>
-                            <th>Jueves</th>
-                            <th>Viernes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Materias antes del receso -->
-                        <tr>
-                            <td>8:00 - 9:30</td>
-                            <td>Programación I</td>
-                            <td>Matemáticas</td>
-                            <td>Electrónica</td>
-                            <td>Programación I</td>
-                            <td>Matemáticas</td>
-                        </tr>
-                        <tr>
-                            <td>9:30 - 11:00</td>
-                            <td>Electrónica</td>
-                            <td>Física</td>
-                            <td>Matemáticas</td>
-                            <td>Física</td>
-                            <td>Electrónica</td>
-                        </tr>
-                        <!-- Receso -->
-                        <tr class="receso">
-                            <td colspan="6">Receso: 11:00 - 11:30</td>
-                        </tr>
-                        <!-- Materias después del receso -->
-                        <tr>
-                            <td>11:30 - 13:00</td>
-                            <td>Redes</td>
-                            <td>Sistemas</td>
-                            <td>Base de Datos</td>
-                            <td>Redes</td>
-                            <td>Sistemas</td>
-                        </tr>
-                      <tr>
-                            <td>11:30 - 13:00</td>
-                            <td>Redes</td>
-                            <td>Sistemas</td>
-                            <td>Base de Datos</td>
-                            <td>Redes</td>
-                            <td>Sistemas</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+    <!-- Horario -->
+    <section id="horario" class="horario-container">
+        <div class="horario-header">
+            <h2 class="horario-title">Horario Académico</h2>
+        </div>
+        <div class="horario-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>7:00 - 8:40</td>
+                        <td>Automatización I</td>
+                        <td>Programación</td>
+                        <td>Electrónica</td>
+                        <td>Redes</td>
+                        <td>Sistemas</td>
+                    </tr>
+                    <tr>
+                        <td>8:40 - 9:00</td>
+                        <td colspan="5">Receso</td>
+                    </tr>
+                    <tr>
+                        <td>9:00 - 10:40</td>
+                        <td>Sistemas</td>
+                        <td>Electrónica</td>
+                        <td>Programación</td>
+                        <td>Automatización I</td>
+                        <td>Redes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-        <!-- Docentes -->
-        <section id="docentes" class="docentes">
-            <h2>Nuestros Docentes</h2>
-            <div class="grid-docentes">
-                <div class="docente-card">
-                    <img src="/api/placeholder/200/200" alt="Docente 1">
-                    <h3>Dr. Juan Pérez</h3>
-                    <p>Programación I</p>
-                    <a href="#" class="btn">Ver perfil</a>
-                </div>
-                <div class="docente-card">
-                    <img src="/api/placeholder/200/200" alt="Docente 2">
-                    <h3>Ing. María López</h3>
-                    <p>Electrónica</p>
-                    <a href="#" class="btn">Ver perfil</a>
-                </div>
-                <!-- Más tarjetas de docentes aquí -->
-            </div>
-        </section>
-
-        <!-- Recursos y Videos -->
-        <section id="recursos" class="recursos">
-            <h2>Recursos Educativos</h2>
-            <div class="carousel">
+    <!-- Videos -->
+    <section id="material" class="container">
+        <div class="horario-header">
+            <h2 class="horario-title">Material Actual</h2>
+        </div>
+        <div class="video-carousel">
+            <div class="video-card">
                 <div class="video-container">
-                    <iframe src="about:blank" data-src="https://www.youtube.com/embed/video1" allowfullscreen></iframe>
-                    <h3>Introducción a la Programación</h3>
+                    <iframe
+                        src="https://www.youtube.com/embed/VIDEO_ID_1?rel=0"
+                        title="Introducción a PLC"
+                        allowfullscreen>
+                    </iframe>
                 </div>
+                <h3>Introducción a PLC</h3>
+                <p>Conceptos básicos de programación de PLCs</p>
+            </div>
+            <div class="video-card">
                 <div class="video-container">
-                    <iframe src="about:blank" data-src="https://www.youtube.com/embed/video2" allowfullscreen></iframe>
-                    <h3>Fundamentos de Electrónica</h3>
+                    <iframe
+                        src="https://www.youtube.com/embed/VIDEO_ID_2?rel=0"
+                        title="Sensores Industriales"
+                        allowfullscreen>
+                    </iframe>
                 </div>
-                <!-- Más videos aquí -->
+                <h3>Sensores Industriales</h3>
+                <p>Tipos y aplicaciones de sensores</p>
             </div>
-            <div class="carousel-controls">
-                <button class="prev">&#8249;</button>
-                <button class="next">&#8250;</button>
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/VIDEO_ID_3?rel=0"
+                        title="Redes Industriales"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h3>Redes Industriales</h3>
+                <p>Protocolos de comunicación industrial</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contacto -->
-        <section id="contacto" class="contacto">
-            <h2>Contactos</h2>
-            <div class="contacto-grid">
-                <div class="contacto-card">
-                    <h3>Centro Estudiantil</h3>
-                    <p>Email: centro.estudiantil@universidad.edu</p>
-                    <p>Tel: (123) 456-7890</p>
-                </div>
-                <div class="contacto-card">
-                    <h3>Mesa Directiva</h3>
-                    <p>Email: mesa.directiva@universidad.edu</p>
-                    <p>Tel: (123) 456-7891</p>
-                </div>
-                <div class="contacto-card">
-                    <h3>Secretaría Académica</h3>
-                    <p>Email: secretaria@universidad.edu</p>
-                    <p>Tel: (123) 456-7892</p>
-                </div>
+    <!-- Docentes -->
+    <section id="docentes" class="docentes container">
+        <div class="horario-header">
+            <h2 class="horario-title">Nuestros Docentes</h2>
+        </div>
+        <div class="docente-card">
+            <img src="/api/placeholder/120/120" alt="Dr. Juan Pérez" class="docente-imagen">
+            <div class="docente-info">
+                <h3>Dr. Juan Pérez</h3>
+                <p>Automatización Industrial</p>
+                <button class="theme-toggle">Ver perfil</button>
             </div>
-        </section>
-    </main>
+        </div>
+        <div class="docente-card">
+            <img src="/api/placeholder/120/120" alt="Ing. María García" class="docente-imagen">
+            <div class="docente-info">
+                <h3>Ing. María García</h3>
+                <p>Programación Industrial</p>
+                <button class="theme-toggle">Ver perfil</button>
+            </div>
+        </div>
+        <div class="docente-card">
+            <img src="/api/placeholder/120/120" alt="M.C. Roberto López" class="docente-imagen">
+            <div class="docente-info">
+                <h3>M.C. Roberto López</h3>
+                <p>Electrónica Industrial</p>
+                <button class="theme-toggle">Ver perfil</button>
+            </div>
+        </div>
+        <div class="docente-card">
+            <img src="/api/placeholder/120/120" alt="Dra. Ana Martínez" class="docente-imagen">
+            <div class="docente-info">
+                <h3>Dra. Ana Martínez</h3>
+                <p>Redes Industriales</p>
+                <button class="theme-toggle">Ver perfil</button>
+            </div>
+        </div>
+        <div class="docente-card">
+            <img src="/api/placeholder/120/120" alt="Dr. Carlos Ruiz" class="docente-imagen">
+            <div class="docente-info">
+                <h3>Dr. Carlos Ruiz</h3>
+                <p>Sistemas de Control</p>
+                <button class="theme-toggle">Ver perfil</button>
+            </div>
+        </div>
+        <div class="docente-card">
+            <img src="/api/placeholder/120/120" alt="M.C. Laura Sánchez" class="docente-imagen">
+            <div class="docente-info">
+                <h3>M.C. Laura Sánchez</h3>
+                <p>Instrumentación Industrial</p>
+                <button class="theme-toggle">Ver perfil</button>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Informática Industrial. Todos los derechos reservados.</p>
-    </footer>
+    <!-- Contactos -->
+    <section id="contactos" class="contactos container">
+        <div class="horario-header">
+            <h2 class="horario-title">Contactos</h2>
+        </div>
+        <div class="contacto-card">
+            <h3>Mesa Directiva</h3>
+            <p>Presidente: Juan Martínez</p>
+            <p>Email: presidente@instituto.edu</p>
+            <p>Tel: (123) 456-7890</p>
+        </div>
+        <div class="contacto-card">
+            <h3>Centro Estudiantil</h3>
+            <p>Coordinador: María López</p>
+            <p>Email: centro.estudiantil@instituto.edu</p>
+            <p>Tel: (123) 456-7891</p>
+        </div>
+        <div class="contacto-card">
+            <h3>Secretaría</h3>
+            <p>Secretaria: Ana García</p>
+            <p>Email: secretaria@instituto.edu</p>
+            <p>Tel: (123) 456-7892</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
+        }
+    </script>
 </body>
 </html>
