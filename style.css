@@ -206,7 +206,8 @@ body {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
-    overflow: hidden;
+    overflow-x: auto;
+    scrollbar-width: thin;
 }
 
 .carousel {
