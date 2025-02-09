@@ -211,7 +211,7 @@ body {
 
 .carousel {
     display: flex;
-    gap: 2rem;
+    gap: 5px;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -227,6 +227,7 @@ body {
 }
 
 .carousel::-webkit-scrollbar-thumb {
+    height: 20px;
     background: var(--primary-color);
     border-radius: 10px;
 }
