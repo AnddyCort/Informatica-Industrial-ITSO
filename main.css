@@ -1,4 +1,25 @@
 :root {
+    --primary-color: #ff9f43;    /* Naranja más claro */
+    --secondary-color: #ffd93d;  /* Amarillo mantenido */
+    --accent-color: #ff6b6b;    /* Coral */
+    --background-color: #2d3436;
+    --text-color: #f5f6fa;
+    --nav-background: rgba(45, 52, 54, 0.9);
+    --card-background: rgba(45, 52, 54, 0.95);
+    --border-color: #636e72;
+    --glass-background: rgba(45, 52, 54, 0.8);
+    --table-header: linear-gradient(135deg, #ff6b6b, #ff9f43);
+    --table-stripe: rgba(255, 159, 67, 0.05);
+    --receso-color: #3d3d3d;
+
+    
+    /* Gradientes redes sociales (sin cambios) */
+    --whatsapp-gradient: linear-gradient(135deg, #25D366, #128C7E);
+    --telegram-gradient: linear-gradient(135deg, #0088cc, #0063b1);
+    --discord-gradient: linear-gradient(135deg, #7289da, #4e5d94);
+}
+
+.dark-theme {
     /* Paleta de colores atardecer */
     --primary-color: #ff6b6b;    /* Coral suave */
     --secondary-color: #ffd93d;  /* Amarillo dorado */
@@ -12,27 +33,6 @@
     --table-header: linear-gradient(135deg, #ff9f43, #ff6b6b);
     --table-stripe: rgba(255, 107, 107, 0.05);
     --receso-color: #f7f7f7;
-    
-    /* Gradientes redes sociales (sin cambios) */
-    --whatsapp-gradient: linear-gradient(135deg, #25D366, #128C7E);
-    --telegram-gradient: linear-gradient(135deg, #0088cc, #0063b1);
-    --discord-gradient: linear-gradient(135deg, #7289da, #4e5d94);
-}
-
-.dark-theme {
-    --primary-color: #ff9f43;    /* Naranja más claro */
-    --secondary-color: #ffd93d;  /* Amarillo mantenido */
-    --accent-color: #ff6b6b;    /* Coral */
-    --background-color: #2d3436;
-    --text-color: #f5f6fa;
-    --nav-background: rgba(45, 52, 54, 0.9);
-    --card-background: rgba(45, 52, 54, 0.95);
-    --border-color: #636e72;
-    --glass-background: rgba(45, 52, 54, 0.8);
-    --table-header: linear-gradient(135deg, #ff6b6b, #ff9f43);
-    --table-stripe: rgba(255, 159, 67, 0.05);
-    --receso-color: #3d3d3d;
-}
 
 * {
     margin: 0;
@@ -121,7 +121,7 @@ body {
 
 .slider:before {
     position: absolute;
-    content: "🌞";
+    content: "🌙";
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,7 +147,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    content: "🌙";
+    content: "🌞";
     transform: translateX(26px);
 }
 
