@@ -4,55 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informática Industrial</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="amanecer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Barra de navegación -->
     <nav class="navbar">
         <div class="nav-left">
-            <label class="switch">
-                <input type="checkbox" id="themeToggle">
-                <span class="slider round"></span>
-            </label>
+            <button id="themeToggle" class="theme-button">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
         <div class="nav-right">
             <a href="#inicio">Inicio</a>
-            <a href="#grupos">Grupos</a>
             <a href="#horario">Horario</a>
-            <a href="#material">Material</a>
+            <a href="#material">Videos</a>
             <a href="#docentes">Docentes</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#contacto">Contactos</a>
         </div>
     </nav>
 
     <!-- Sección de inicio -->
     <section id="inicio">
-        <div class="hero">
-            <img src="https://i.postimg.cc/159sdvxs/Neon-Bongo-cat.jpg" alt="Banner Institucional">
-            <h1>Informática Industrial</h1>
-            <div class="title-underline"></div>
-            <p>Solo para 2Do. Semestre, Bajo mi DICTADURA.</p>
-        </div>
-    </section>
-
-    <!-- Sección de grupos -->
-    <section id="grupos">
-        <h2>Grupos de Estudio</h2>
-        <div class="title-underline"></div>
-        <div class="social-buttons">
-            <a href="https://todosgruposw.blogspot.com/?m=1" class="social-btn whatsapp">
-                <i class="fab fa-whatsapp"></i>
-                WhatsApp
-            </a>
-            <a href="https://t.me/+VJrNYJire-phNGFh" class="social-btn telegram">
-                <i class="fab fa-telegram"></i>
-                Telegram
-            </a>
-            <a href="https://discord.gg/xscuXT5E" class="social-btn discord">
-                <i class="fab fa-discord"></i>
-                Discord
-            </a>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Informática Industrial</h1>
+                <div class="title-underline"></div>
+                <p class="hero-description">Solo para 2Do. Semestre, Bajo mi DICTADURA.</p>
+                <div class="hero-social-buttons">
+                    <a href="https://todosgruposw.blogspot.com/?m=1" class="social-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="https://t.me/+VJrNYJire-phNGFh" class="social-btn telegram">
+                        <i class="fab fa-telegram"></i>
+                        Telegram
+                    </a>
+                    <a href="https://discord.gg/xscuXT5E" class="social-btn discord">
+                        <i class="fab fa-discord"></i>
+                        Discord
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://i.postimg.cc/159sdvxs/Neon-Bongo-cat.jpg" alt="Banner Institucional">
+            </div>
         </div>
     </section>
 
@@ -108,7 +104,7 @@
 
     <!-- Sección de material -->
     <section id="material">
-        <h2>Material Extra</h2>
+        <h2>Videos Educativos</h2>
         <div class="title-underline"></div>
         <div class="carousel-container">
             <div class="carousel">
@@ -137,10 +133,8 @@
                     <h3>Circuitos En Paralelo</h3>
                 </div>
             </div>
-            <div class="carousel-indicator">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+            <div class="carousel-scrollbar">
+                <div class="scrollbar-thumb"></div>
             </div>
         </div>
     </section>
@@ -151,40 +145,34 @@
         <div class="title-underline"></div>
         <div class="teachers-grid">
             <div class="teacher-card">
-                <img src="https://i.postimg.cc/qqr44Lzc/d6ebe3c8-5dbc-4e99-8c03-a2bde3296896.jpg" alt="Profesor 1">
                 <h3>Dr. Juan Pérez</h3>
                 <p>Programación II</p>
-                <a href="#" class="contact-btn">Ver Perfil</a>
+                <button class="contact-btn">Contactar</button>
             </div>
             <div class="teacher-card">
-                <img src="https://i.postimg.cc/66VBzDmM/Owner-free-icons-designed-by-SBTS2018.jpg" alt="Profesora 2">
                 <h3>Dra. María García</h3>
                 <p>Bases De Datos</p>
-                <a href="#" class="contact-btn">Ver Perfil</a>
+                <button class="contact-btn">Contactar</button>
             </div>
             <div class="teacher-card">
-                <img src="https://i.postimg.cc/qqr44Lzc/d6ebe3c8-5dbc-4e99-8c03-a2bde3296896.jpg" alt="Profesor 3">
                 <h3>Ing. Carlos López</h3>
                 <p>Inglés Técnico II</p>
-                <a href="#" class="contact-btn">Ver Perfil</a>
+                <button class="contact-btn">Contactar</button>
             </div>
             <div class="teacher-card">
-                <img src="https://i.postimg.cc/66VBzDmM/Owner-free-icons-designed-by-SBTS2018.jpg" alt="Profesora 4">
                 <h3>Mtra. Ana Martínez</h3>
                 <p>Sistemas Digitales</p>
-                <a href="#" class="contact-btn">Ver Perfil</a>
+                <button class="contact-btn">Contactar</button>
             </div>
             <div class="teacher-card">
-                <img src="https://i.postimg.cc/qqr44Lzc/d6ebe3c8-5dbc-4e99-8c03-a2bde3296896.jpg" alt="Profesor 5">
                 <h3>Dr. Roberto Sánchez</h3>
                 <p>Electrónica General</p>
-                <a href="#" class="contact-btn">Ver Perfil</a>
+                <button class="contact-btn">Contactar</button>
             </div>
             <div class="teacher-card">
-                <img src="https://i.postimg.cc/66VBzDmM/Owner-free-icons-designed-by-SBTS2018.jpg" alt="Profesora 6">
                 <h3>Dra. Laura Torres</h3>
                 <p>Calculo Aplicado</p>
-                <a href="#" class="contact-btn">Ver Perfil</a>
+                <button class="contact-btn">Contactar</button>
             </div>
         </div>
     </section>
@@ -197,17 +185,23 @@
             <div class="contact-card">
                 <h3>Secretaría</h3>
                 <p>Lic. Patricia Ramírez</p>
-                <p><i class="fab fa-whatsapp"></i> +52 123 456 7890</p>
+                <p><i class="fas fa-phone"></i> +52 123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> patricia@ejemplo.com</p>
+                <button class="contact-btn">Contactar</button>
             </div>
             <div class="contact-card">
                 <h3>Mesa Directiva</h3>
                 <p>Ing. Miguel Ángel Ruiz</p>
-                <p><i class="fab fa-whatsapp"></i> +52 098 765 4321</p>
+                <p><i class="fas fa-phone"></i> +52 098 765 4321</p>
+                <p><i class="fas fa-envelope"></i> miguel@ejemplo.com</p>
+                <button class="contact-btn">Contactar</button>
             </div>
             <div class="contact-card">
                 <h3>Centro Estudiantil</h3>
                 <p>Est. Andrea González</p>
-                <p><i class="fab fa-whatsapp"></i> +52 456 789 0123</p>
+                <p><i class="fas fa-phone"></i> +52 456 789 0123</p>
+                <p><i class="fas fa-envelope"></i> andrea@ejemplo.com</p>
+                <button class="contact-btn">Contactar</button>
             </div>
         </div>
     </section>
@@ -215,36 +209,28 @@
     <script>
         // Script para el cambio de tema
         const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('change', () => {
+        const moonIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-theme');
+            moonIcon.classList.toggle('fa-moon');
+            moonIcon.classList.toggle('fa-sun');
         });
 
-        // Script para el carrusel
+        // Script para el carrusel con scrollbar
         const carousel = document.querySelector('.carousel');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        carousel.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - carousel.offsetLeft;
-            scrollLeft = carousel.scrollLeft;
+        const scrollbar = document.querySelector('.scrollbar-thumb');
+        
+        // Actualizar posición de scrollbar
+        carousel.addEventListener('scroll', () => {
+            const scrollPercentage = (carousel.scrollLeft / (carousel.scrollWidth - carousel.clientWidth)) * 100;
+            scrollbar.style.left = `${scrollPercentage}%`;
         });
 
-        carousel.addEventListener('mouseleave', () => {
-            isDown = false;
-        });
-
-        carousel.addEventListener('mouseup', () => {
-            isDown = false;
-        });
-
-        carousel.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
+        // Scroll horizontal con rueda del mouse
+        carousel.addEventListener('wheel', (e) => {
             e.preventDefault();
-            const x = e.pageX - carousel.offsetLeft;
-            const walk = (x - startX) * 2;
-            carousel.scrollLeft = scrollLeft - walk;
+            carousel.scrollLeft += e.deltaY;
         });
     </script>
 </body>
