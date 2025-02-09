@@ -33,6 +33,7 @@
     --table-header: linear-gradient(135deg, #ff9f43, #ff6b6b);
     --table-stripe: rgba(255, 107, 107, 0.05);
     --receso-color: #f7f7f7;
+}
 
 * {
     margin: 0;
