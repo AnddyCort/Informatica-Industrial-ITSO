@@ -258,6 +258,8 @@ body {
 
 /* Teachers Section */
 .teachers-grid {
+    text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -281,6 +283,8 @@ body {
 
 /* Contact Section */
 .contact-grid {
+    text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: 2rem;
