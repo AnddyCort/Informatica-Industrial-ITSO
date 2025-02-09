@@ -216,9 +216,8 @@ body {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     padding: 1rem 0 2rem 0;
-    scrollbar-width: thin;
+    scrollbar-width: auto;
     scrollbar-color: var(--primary-color) var(--border-color)
-    position: relative;
 }
 
 .carousel::-webkit-scrollbar {
