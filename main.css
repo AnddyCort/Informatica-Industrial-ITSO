@@ -221,14 +221,14 @@ body {
 }
 
 .carousel::-webkit-scrollbar {
-    height: 20px;
+    height: 26px;
     background: var(--border-color);
-    border-radius: 10px;
+    border-radius: 13px;
 }
 
 .carousel::-webkit-scrollbar-thumb {
     background: var(--primary-color);
-    border-radius: 10px;
+    border-radius: 13px;
 }
 
 .carousel::-webkit-scrollbar-thumb:hover {
