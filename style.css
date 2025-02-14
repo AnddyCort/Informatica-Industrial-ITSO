@@ -1,5 +1,5 @@
 :root {
-    /* Dark theme (default) - Sunrise colors */
+     
     --primary-color: #FF6B6B;    
     --secondary-color: #FFA07A;  
     --accent-color: #FFB6C1;     
@@ -13,14 +13,14 @@
     --table-stripe: rgba(255, 107, 107, 0.05);
     --receso-color: #3d3d3d;
 
-    /* Social media gradients */
+     
     --whatsapp-gradient: linear-gradient(135deg, #25D366, #128C7E);
     --telegram-gradient: linear-gradient(135deg, #0088cc, #0063b1);
     --discord-gradient: linear-gradient(135deg, #7289da, #4e5d94);
 }
 
 .dark-theme {
-    /* Light theme - Sunrise colors */
+     
     --primary-color: #FF6B6B;
     --secondary-color: #FFA07A;
     --accent-color: #FFB6C1;
@@ -50,7 +50,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar */
+
 .navbar {
     position: fixed;
     top: 20px;
@@ -112,7 +112,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Hero Section */
+
 .hero-container {
     display: flex;
     justify-content: space-between;
@@ -156,7 +156,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Social Buttons */
+
 .hero-social-buttons {
     display: flex;
     flex-direction: column;
@@ -199,7 +199,7 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Video Carousel - Improved */
+
 .carousel-container {
     position: relative;
     width: 100%;
@@ -257,7 +257,7 @@ body {
     border: none;
 }
 
-/* Teachers Section */
+
 .teachers-grid {
     text-align: center;
     align-items: center;
@@ -282,7 +282,7 @@ body {
     transform: translateY(-5px);
 }
 
-/* Contact Section */
+
 .contact-grid {
     text-align: center;
     align-items: center;
@@ -325,7 +325,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Schedule Table */
+
 .table-container {
     width: 100%;
     overflow-x: auto;
@@ -368,7 +368,7 @@ tr:nth-child(even) td {
     font-weight: 500;
 }
 
-/* General Section Styling */
+
 section {
     padding: 4rem 1.5rem;
     margin-top: 2rem;
@@ -377,7 +377,7 @@ section {
     margin-right: auto;
 }
 
-/* Media Queries */
+
 @media (max-width: 1024px) {
     .hero-container {
         padding: 2rem 1rem;
