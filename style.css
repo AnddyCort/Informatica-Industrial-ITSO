@@ -397,6 +397,37 @@ section {
     }
 }
 
+/* Estilos para la sección de comentarios */
+#comments-section {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  text-align: center;
+  border-top: 1px solid #ccc; /* Línea separadora */
+  background-color: #f9f9f9;
+}
+
+#comments-section p {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#comment-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#comment-button:hover {
+  background-color: #0056b3;
+}
+
 @media (max-width: 768px) {
     .hero-container {
         flex-direction: column-reverse;
