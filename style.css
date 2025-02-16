@@ -275,7 +275,7 @@ body {
     padding: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .teacher-card:hover {
@@ -284,7 +284,7 @@ body {
 
 
 .contact-grid {
-    text-align: center;
+    text-align: start;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -325,6 +325,40 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos para el pie de página con sección de comentarios */
+#comments-footer {
+  background-color: #f9f9f9;
+  padding: 20px 0;
+  border-top: 1px solid #ccc; /* Línea separadora */
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#comments-footer p {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.comment-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.comment-button:hover {
+  background-color: #0056b3;
+}
 
 .table-container {
     width: 100%;
@@ -397,36 +431,6 @@ section {
     }
 }
 
-/* Estilos para la sección de comentarios */
-#comments-section {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 600px;
-  text-align: center;
-  border-top: 1px solid #ccc; /* Línea separadora */
-  background-color: #f9f9f9;
-}
-
-#comments-section p {
-  font-size: 1em;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-#comment-button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1em;
-  color: white;
-  background-color: #007bff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-#comment-button:hover {
-  background-color: #0056b3;
-}
 
 @media (max-width: 768px) {
     .hero-container {
