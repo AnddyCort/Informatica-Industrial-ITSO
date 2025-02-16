@@ -327,12 +327,11 @@ body {
 
 /* Estilos para el pie de página con sección de comentarios */
 .comments-footer {
-  background-color: var(--glass-background); /* Fondo semitransparente */
-  padding: 20px 0;
-  border-top: 1px solid var(--border-color); /* Borde sutil */
+  background-color: var(--card-background); /* Fondo más sólido */
+  padding: 40px 0; /* Más espacio interno */
+  border-top: 2px solid var(--primary-color); /* Borde superior con color primario */
   text-align: center;
-  backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
-  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+  margin-top: 40px; /* Separación del contenido anterior */
 }
 
 .footer-content {
@@ -342,17 +341,17 @@ body {
 }
 
 .comments-footer p {
-  font-size: 1em;
+  font-size: 1.1em;
   color: var(--text-color); /* Color de texto principal */
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* Más espacio debajo del texto */
 }
 
 .comment-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 1em;
   color: var(--text-color); /* Color de texto principal */
-  background: var(--telegram-gradient); /* Usamos el gradiente de Telegram */
+  background: var(--primary-color); /* Fondo con color primario */
   border-radius: 25px; /* Botón redondeado */
   text-decoration: none;
   transition: all 0.3s ease;
@@ -360,6 +359,7 @@ body {
 }
 
 .comment-button:hover {
+  background: var(--secondary-color); /* Cambio de color al pasar el mouse */
   transform: translateY(-2px); /* Efecto de levantar */
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
 }
