@@ -325,46 +325,30 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para el pie de página con sección de comentarios */
-.comments-footer {
-  background-color: var(--background-color); /* Fondo con color de fondo principal */
-  padding: 60px 20px; /* Más espacio interno (arriba/abajo y laterales) */
-  border-top: 3px solid var(--primary-color); /* Borde superior grueso y con color primario */
-  text-align: center;
-  margin-top: 60px; /* Más separación del contenido anterior */
-  width: 100%; /* Ocupa todo el ancho */
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Sombra superior para diferenciar */
+.coment-grid {
+    padding: 0.5rem;
+    text-align: start;
+    align-items: auto;
+    background: linear-gradient(135deg, var(--primary-color), var(--background-color));
 }
 
-.footer-content {
-  max-width: 800px; /* Ancho máximo del contenido */
-  margin: 0 auto; /* Centrar el contenido */
-  padding: 20px; /* Espacio interno */
+h4{
+    text-align: center;
 }
 
-.comments-footer p {
-  font-size: 1.2em;
-  color: var(--text-color); /* Color de texto principal */
-  margin-bottom: 30px; /* Más espacio debajo del texto */
-  line-height: 1.6; /* Mejor espaciado entre líneas */
-}
-
-.comment-button {
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: 1.1em;
-  color: var(--text-color); /* Color de texto principal */
-  background: var(--primary-color); /* Fondo con color primario */
-  border-radius: 30px; /* Botón más redondeado */
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-}
-
-.comment-button:hover {
-  background: var(--secondary-color); /* Cambio de color al pasar el mouse */
-  transform: translateY(-2px); /* Efecto de levantar */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+.coment-btn {
+    width: auto;
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    background: var(--background-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    text-decoration: none;
+    text-align: center;
 }
 
 .table-container {
