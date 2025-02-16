@@ -327,32 +327,35 @@ body {
 
 /* Estilos para el pie de página con sección de comentarios */
 .comments-footer {
-  background-color: var(--card-background); /* Fondo más sólido */
-  padding: 40px 0; /* Más espacio interno */
-  border-top: 2px solid var(--primary-color); /* Borde superior con color primario */
+  background-color: var(--background-color); /* Fondo con color de fondo principal */
+  padding: 60px 20px; /* Más espacio interno (arriba/abajo y laterales) */
+  border-top: 3px solid var(--primary-color); /* Borde superior grueso y con color primario */
   text-align: center;
-  margin-top: 40px; /* Separación del contenido anterior */
+  margin-top: 60px; /* Más separación del contenido anterior */
+  width: 100%; /* Ocupa todo el ancho */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Sombra superior para diferenciar */
 }
 
 .footer-content {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 20px;
+  max-width: 800px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centrar el contenido */
+  padding: 20px; /* Espacio interno */
 }
 
 .comments-footer p {
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: var(--text-color); /* Color de texto principal */
-  margin-bottom: 20px; /* Más espacio debajo del texto */
+  margin-bottom: 30px; /* Más espacio debajo del texto */
+  line-height: 1.6; /* Mejor espaciado entre líneas */
 }
 
 .comment-button {
   display: inline-block;
-  padding: 12px 24px;
-  font-size: 1em;
+  padding: 15px 30px;
+  font-size: 1.1em;
   color: var(--text-color); /* Color de texto principal */
   background: var(--primary-color); /* Fondo con color primario */
-  border-radius: 25px; /* Botón redondeado */
+  border-radius: 30px; /* Botón más redondeado */
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
@@ -361,7 +364,7 @@ body {
 .comment-button:hover {
   background: var(--secondary-color); /* Cambio de color al pasar el mouse */
   transform: translateY(-2px); /* Efecto de levantar */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
 .table-container {
