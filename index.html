@@ -25,11 +25,11 @@
 <meta property="og:type" content="website">
 
     <!-- Tus hojas de estilo -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="amanecer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-   
+
     <nav class="navbar">
         <div class="nav-left">
             <button id="themeToggle" class="theme-button">
@@ -45,7 +45,7 @@
         </div>
     </nav>
 
-    
+
     <section id="inicio">
         <div class="hero-container">
             <div class="hero-content">
@@ -73,7 +73,7 @@
         </div>
     </section>
 
-    
+
     <section id="horario">
         <h2>Horario de Clases</h2>
         <div class="title-underline"></div>
@@ -123,7 +123,7 @@
         </div>
     </section>
 
-    
+
     <section id="material">
         <h2>Videos Educativos</h2>
         <div class="title-underline"></div>
@@ -220,7 +220,7 @@
         </div>
     </section>
 
-    
+
     <section id="docentes">
         <h2>Nuestros Docentes</h2>
         <div class="title-underline"></div>
@@ -258,40 +258,34 @@
         </div>
     </section>
 
-    
+
     <section id="contacto">
         <h2>Contactos</h2>
         <div class="title-underline"></div>
         <div class="contact-grid">
-            
+
             <div class="contact-card">
                 <h3>Mesa Directiva</h3>
                 <p>Est. Lesly Carpio</p>
                 <p><i class="fas fa-phone"></i>+591 73265596</p>
                 <p>Representante. 2Do. Semestre</p>
-                <a href="https://wa.me/+591 73265596" class="contact-btn">Contactar</a>
+                <a href="https://wa.me/+591 73265596" class="contacts-btn">Contactar</a>
             </div>
-            <div class="contact-card">
-                <h3>Centro Estudiantil</h3>
-                <p>Est. ......</p>
-                <p><i class="fas fa-phone"></i> +591 ......</p>
-                <p><i class="fas fa-envelope"></i> ......@gmail.com</p>
-                <a href="https://wa.me/+591......" class="contact-btn">Contactar</a>
-            </div>
+            
         </div>
     </section>
 
-<div class="coment-grid">
+        <div class="coment-grid">
                 <h4>Comentarios</h4>                
                 <h6>Por favor, compárteme un comentario o sugerencia sobre esta página.</h6>
-                <a href="https://t.me/AnddyCortez" class="coment-btn">Comentar 💬</a>
+                <a href="https://t.me/AnddyCortez" class="coment-btn">Comentar</a>
         </div>
-
+    
     <script>
         // Script para el cambio de tema
         const themeToggle = document.getElementById('themeToggle');
         const moonIcon = themeToggle.querySelector('i');
-        
+
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-theme');
             moonIcon.classList.toggle('fa-moon');
@@ -301,7 +295,7 @@
         // Script para el carrusel con scrollbar
         const carousel = document.querySelector('.carousel');
         const scrollbar = document.querySelector('.scrollbar-thumb');
-        
+
         // Actualizar posición de scrollbar
         carousel.addEventListener('scroll', () => {
             const scrollPercentage = (carousel.scrollLeft / (carousel.scrollWidth - carousel.clientWidth)) * 100;
