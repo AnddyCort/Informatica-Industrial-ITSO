@@ -292,11 +292,10 @@ body {
 
 
 .teachers-grid {
-    text-align: center;
+    text-align: start;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     /*flex-direction: column;*/
     gap: 2rem;
     max-width: 800px;
@@ -323,7 +322,6 @@ body {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     /*flex-direction: column;*/
     gap: 2rem;
     max-width: 800px;
