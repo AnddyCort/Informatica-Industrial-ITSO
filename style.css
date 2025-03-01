@@ -1,11 +1,215 @@
-h2 {
+/* Radio */
+.radio-icon {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e95e90 0%, #ff7eb3 100%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.radio-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos mejorados para el reproductor de radio */
+.radio-player {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 160px;
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--background-color), var(--glass-background));
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(233, 94, 143, 0.3);
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  z-index: 999;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(233, 94, 143, 0.2);
+  backdrop-filter: blur(8px);
+  transform: scale(0.9);
+  opacity: 0.92;
+}
+
+.radio-player:hover {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(233, 94, 143, 0.4);
+}
+
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.player-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ff9cc6;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.station-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  background: rgba(20, 20, 30, 0.5);
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+#currentStation {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.station-btn {
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.station-btn:hover {
+  color: #ff9cc6;
+}
+
+#statusIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #666;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+
+#statusIndicator.active {
+  background-color: #e95e90;
+  box-shadow: 0 0 8px rgba(233, 94, 143, 0.7);
+}
+
+.player-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.control-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.control-btn:hover {
+  background: linear-gradient(145deg, #f06b9e, #ff8fc0);
+  transform: scale(1.05);
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(20, 20, 35, 0.5);
+  padding: 3px 6px;
+  border-radius: 12px;
+}
+
+.volume-btn {
+  background: none;
+  border: none;
+  color: #ff9cc6;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  transition: color 0.2s;
+}
+
+.volume-btn:hover {
+  color: #ffcce0;
+}
+
+.volume-bar {
+  width: 45px;
+  height: 4px;
+  background: var(--secondary-color);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+#volumeLevel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #e95e90, #ff9cc6);
+  width: 50%;
+  border-radius: 2px;
+  transition: width 0.2s;
+}
+
+#statusMessage {
+  font-size: 9px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s;
+  height: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/*h2 {
   font-family: "Merienda", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-}
+}*/
 
-h1, th {
+h1, th, h2 {
   font-family: "Sigmar", serif;
   /*font-weight: 400;*/
   letter-spacing: 2px;
@@ -292,10 +496,11 @@ body {
 
 
 .teachers-grid {
-    text-align: start;
+    text-align: center;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     /*flex-direction: column;*/
     gap: 2rem;
     max-width: 800px;
@@ -322,6 +527,7 @@ body {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     /*flex-direction: column;*/
     gap: 2rem;
     max-width: 800px;
