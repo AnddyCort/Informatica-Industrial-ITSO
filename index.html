@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   
-    <link rel="canonical" href="https://anddycort.github.io/Informatica-Industrial-ITSO/" />
-
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🍁𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙲𝙰 𝙸𝙽𝙳𝚄𝚂𝚃𝚁𝙸𝙰𝙻</title>
+    <title>Informática Industrial</title>
 
-    <meta name="description" content="🌱Portal educativo con recursos, horarios y más">
+    <!-- Descripción -->
+    <meta name="description" content="Portal educativo de Informática Industrial con recursos, horarios y material didáctico">
 
-    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/SKMhr86d/9cdc4acd-ffa2-4387-9afc-c778f8da3ac2.png">
+    <!-- Opción 1: Favicon con URL -->
+    <link rel="icon" type="image/x-icon" href="https://tudominio.com/favicon.ico">
+    <!-- O con ruta local -->
+    <link rel="icon" type="image/png" href="imagenes/favicon.png">
 
-    <meta property="og:title" content="🍁𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙲𝙰 𝙸𝙽𝙳𝚄𝚂𝚃𝚁𝙸𝙰𝙻">
-    <meta property="og:description" content="🌱Portal educativo con recursos, horarios y más">
-
-    <meta property="og:image" content="https://i.postimg.cc/0jpjHF7t/Bedtime.jpg">
+    <!-- Opción 1: Imagen de previsualización con URL -->
+    <meta property="og:title" content="Informática Industrial">
+    <meta property="og:description" content="Portal educativo de Informática Industrial con recursos, horarios y material didáctico">
+    <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLAmpg0IzxBl_EJjh3QDlKW2YMCxxlfRARnRwyn-ah9sTPeAPEp7f9-_ogUfGlgFhzeqM_K2CXhcXEhjTbph0XgQaAZbAlcOxadwxk7_EM65zzU4zq4QMPnqK57I6NpjdbzwJiVThydas4GQD2X8ffVgUqVWRfQOmQSi4-ypDcTXPUhUWpQRiAGCbpVMPT/s785/93a9c92bbda618c1831d00ab1c85e2e0.jpg">
+    <!-- O con ruta local -->
+    <meta property="og:image" content="imagenes/preview.jpg">
 
 <meta property="og:url" content="---">
 <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Tus hojas de estilo -->
+    <link rel="stylesheet" href="amanecer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,10 +133,6 @@
         <div class="title-underline"></div>
         <div class="carousel-container">
             <div class="carousel">
-                <div class="carousel-item">
-                    <iframe src="https://www.youtube.com/embed/prbF4O0d-7M" frameborder="0" allowfullscreen></iframe>
-                    <h3>PostgreSQL Básico</h3>
-                </div>
                 <div class="carousel-item">
                     <iframe src="https://www.youtube.com/embed/uUdKAYl-F7g" frameborder="0" allowfullscreen></iframe>
                     <h3>SQL Desde 0</h3>
@@ -249,14 +250,14 @@
                 <a href="https://wa.me/+59177771272" class="contact-btn">Contactar</a>
             </div>
             <div class="teacher-card">
-                <h3>Ing. Rodrigo Alave.</h3>
+                <h3>Ing. Deysi E. Chuquimia Quispe</h3>
                 <p>Electrónica General I</p>
-                <a href="https://wa.me/+59176211587" class="contact-btn">Contactar</a>
+                <a href="https://wa.me/+59170637549" class="contact-btn">Contactar</a>
             </div>
             <div class="teacher-card">
                 <h3>Lic. Pascual Yana Ch.</h3>
-                <p>Base De Datos</p>
-                <a href="https://wa.me/+59170577697" class="contact-btn">Contactar</a>
+                <p>Bases De Datos</p>
+                <a href="https://wa.me/+591..." class="contact-btn">Contactar</a>
             </div>
         </div>
     </section>
@@ -284,7 +285,263 @@
                 <a href="https://t.me/AnddyCortez" class="coment-btn">Comentar 💬</a>
         </div>
     
+    <!-- Radio -->
+<div class="radio-icon" id="radioIcon">
+  <svg viewBox="0 0 24 24" width="20" height="20">
+    <path fill="currentColor" d="M3.24 6.15C2.51 6.43 2 7.17 2 8v12c0 1.1.89 2 2 2h16c1.11 0 2-.9 2-2V8c0-1.11-.89-2-2-2H8.3l8.26-3.34L15.88 1 3.24 6.15zM7 20c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm13-8h-2v-2h-2v2H4V8h16v4z"/>
+  </svg>
+</div>
+
+<!-- Panel completo del reproductor -->
+<div class="radio-player" id="radioPlayer">
+  <div class="player-header">
+    <span class="player-title">Radio Online</span>
+    <div id="statusIndicator"></div>
+  </div>
+  
+  <div class="station-info">
+    <span id="currentStation">Estación 1</span>
+    <button id="changeStationBtn" class="station-btn">
+      <svg viewBox="0 0 24 24" width="12" height="12">
+        <path fill="currentColor" d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/>
+      </svg>
+      Cambiar
+    </button>
+  </div>
+  
+  <div class="player-controls">
+    <button id="playPauseBtn" class="control-btn">
+      <svg id="playIcon" viewBox="0 0 24 24" width="16" height="16">
+        <path fill="currentColor" d="M8 5v14l11-7z"/>
+      </svg>
+      <svg id="pauseIcon" viewBox="0 0 24 24" width="16" height="16" style="display: none;">
+        <path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    </button>
+    <div class="volume-container">
+      <button id="volumeDownBtn" class="volume-btn">
+        <svg viewBox="0 0 24 24" width="12" height="12">
+          <path fill="currentColor" d="M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5z"/>
+        </svg>
+      </button>
+      <div class="volume-bar">
+        <div id="volumeLevel"></div>
+      </div>
+      <button id="volumeUpBtn" class="volume-btn">
+        <svg viewBox="0 0 24 24" width="12" height="12">
+          <path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="statusMessage">Listo</div>
+</div>
+    
+    
     <script>
+    
+    // Script mejorado para el reproductor de radio online
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementos del DOM
+    const radioIcon = document.getElementById('radioIcon');
+    const radioPlayer = document.getElementById('radioPlayer');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const volumeUpBtn = document.getElementById('volumeUpBtn');
+    const volumeDownBtn = document.getElementById('volumeDownBtn');
+    const volumeLevel = document.getElementById('volumeLevel');
+    const statusMessage = document.getElementById('statusMessage');
+    const statusIndicator = document.getElementById('statusIndicator');
+    const changeStationBtn = document.getElementById('changeStationBtn');
+    const currentStation = document.getElementById('currentStation');
+    
+    // Crear el elemento de audio
+    const audioElement = new Audio();
+    
+    // URLs de las estaciones de radio (reemplaza estas URLs con las de tus radios)
+    const radioStations = [
+        {
+            name: 'Estación 1',
+            url: 'https://antares.dribbcast.com/proxy/kpop?mp=/stream'
+        },
+        {
+            name: 'Estación 2',
+            url: 'http://stream.zeno.fm/dx838nn9e8zuv.acc'
+        }
+    ];
+    
+    // Configuración inicial
+    let isPlaying = false;
+    let volume = 0.5; // Volumen inicial (50%)
+    let currentStationIndex = 0;
+    audioElement.volume = volume;
+    
+    // Timer para auto-ocultar
+    let hideTimer;
+    
+    // Función para actualizar la interfaz según el estado
+    function updateUI() {
+        // Actualizar botón de play/pause
+        if (isPlaying) {
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'inline';
+            statusMessage.textContent = 'Reproduciendo';
+            statusIndicator.classList.add('active');
+        } else {
+            playIcon.style.display = 'inline';
+            pauseIcon.style.display = 'none';
+            statusMessage.textContent = 'Detenido';
+            statusIndicator.classList.remove('active');
+        }
+        
+        // Actualizar indicador de volumen
+        volumeLevel.style.width = (volume * 100) + '%';
+        
+        // Actualizar información de la estación
+        currentStation.textContent = radioStations[currentStationIndex].name;
+    }
+    
+    // Función para mostrar/ocultar el reproductor
+    function togglePlayer() {
+        if (radioPlayer.style.display === 'block') {
+            radioPlayer.style.display = 'none';
+            radioIcon.style.display = 'flex';
+        } else {
+            radioPlayer.style.display = 'block';
+            radioIcon.style.display = 'none';
+            
+            // Configurar el timer para auto-ocultar
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                if (!isPlaying) {
+                    radioPlayer.style.display = 'none';
+                    radioIcon.style.display = 'flex';
+                }
+            }, 15000); // Se ocultará después de 15 segundos si no está reproduciendo
+        }
+    }
+    
+    // Función para cambiar de estación
+    function changeStation() {
+        const wasPlaying = isPlaying;
+        
+        // Detener reproducción actual
+        if (isPlaying) {
+            audioElement.pause();
+            audioElement.src = '';
+            isPlaying = false;
+        }
+        
+        // Cambiar índice de estación
+        currentStationIndex = (currentStationIndex + 1) % radioStations.length;
+        
+        // Actualizar UI
+        updateUI();
+        
+        // Reanudar reproducción si estaba reproduciéndose
+        if (wasPlaying) {
+            playRadio();
+        }
+    }
+    
+    // Función para reproducir la radio
+    function playRadio() {
+        audioElement.src = radioStations[currentStationIndex].url;
+        statusMessage.textContent = 'Conectando...';
+        
+        let playPromise = audioElement.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                isPlaying = true;
+                updateUI();
+            }).catch(error => {
+                console.error('Error de reproducción:', error);
+                statusMessage.textContent = 'Error';
+                statusIndicator.classList.remove('active');
+            });
+        }
+    }
+    
+    // Evento para el icono flotante
+    radioIcon.addEventListener('click', togglePlayer);
+    
+    // Evento para el botón de play/pause
+    playPauseBtn.addEventListener('click', function() {
+        if (!isPlaying) {
+            playRadio();
+        } else {
+            // Pausar
+            audioElement.pause();
+            audioElement.src = '';
+            isPlaying = false;
+            updateUI();
+        }
+    });
+    
+    // Evento para cambiar estación
+    changeStationBtn.addEventListener('click', changeStation);
+    
+    // Evento para subir volumen
+    volumeUpBtn.addEventListener('click', function() {
+        if (volume < 1.0) {
+            volume = Math.min(1.0, volume + 0.1);
+            audioElement.volume = volume;
+            updateUI();
+        }
+    });
+    
+    // Evento para bajar volumen
+    volumeDownBtn.addEventListener('click', function() {
+        if (volume > 0) {
+            volume = Math.max(0, volume - 0.1);
+            audioElement.volume = volume;
+            updateUI();
+        }
+    });
+    
+    // Evento para ocultar/mostrar el reproductor con tecla Esc
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            togglePlayer();
+        }
+    });
+    
+    // Eventos para manejar errores y cambios de estado
+    audioElement.addEventListener('error', function() {
+        statusMessage.textContent = 'Error';
+        isPlaying = false;
+        statusIndicator.classList.remove('active');
+        updateUI();
+    });
+    
+    audioElement.addEventListener('waiting', function() {
+        statusMessage.textContent = 'Conectando...';
+    });
+    
+    audioElement.addEventListener('playing', function() {
+        statusMessage.textContent = 'Reproduciendo';
+        statusIndicator.classList.add('active');
+        
+        // Cancelar el timer de auto-ocultar si está reproduciendo
+        clearTimeout(hideTimer);
+    });
+    
+    audioElement.addEventListener('stalled', function() {
+        statusMessage.textContent = 'Reconectando...';
+    });
+    
+    // Inicializar la interfaz
+    updateUI();
+    
+    // Auto-reproducción al cargar
+    setTimeout(() => {
+        playRadio();
+        togglePlayer(); // Mostrar el reproductor
+    }, 1000); // Pequeño retraso para asegurar que todo esté cargado
+});
+    
+    
         // Script para el cambio de tema
         const themeToggle = document.getElementById('themeToggle');
         const moonIcon = themeToggle.querySelector('i');
@@ -310,6 +567,7 @@
             e.preventDefault();
             carousel.scrollLeft += e.deltaY;
         });
+    
     </script>
 </body>
 </html>
