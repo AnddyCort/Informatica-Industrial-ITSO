@@ -1,15 +1,15 @@
 /* Variables de colores futuristas con tema oscuro */
 :root {
     /* Colores primarios */
-    --primary-dark: #0a0e17;
-    --primary-medium: #151c28;
-    --primary-light: #1e2736;
+    --primary-dark: #0f0a17;
+    --primary-medium: #1a1326;
+    --primary-light: #271a36;
     
     /* Acentos futuristas */
-    --accent-cyan: #00e5ff;
-    --accent-purple: #9c27b0;
-    --accent-blue: #304ffe;
-    --accent-teal: #00bfa5;
+    --accent-cyan: #ff7e50;
+    --accent-purple: #ff3d8a;
+    --accent-blue: #a156ff;
+    --accent-teal: #ffcb52;
     
     /* Gradientes */
     --gradient-tech: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
@@ -26,8 +26,8 @@
     --font-body: 'Titillium Web', sans-serif;
     
     /* Sombras */
-    --tech-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
-    --tech-glow: 0 0 10px rgba(0, 229, 255, 0.5);
+    --tech-shadow: 0 5px 15px rgba(255, 61, 138, 0.25);
+    --tech-glow: 0 0 12px rgba(255, 61, 138, 0.6);
 }
 
 /* Reset y estilos base */
