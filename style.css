@@ -59,7 +59,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-cyan);
+    color: var(--primary-light);
     text-shadow: 0 0 5px rgba(255, 126, 80, 0.4);
 }
 
@@ -256,7 +256,7 @@ section {
     max-width: 100%;
     border-radius: 10px;
     box-shadow: var(--tech-shadow);
-    border: 2px solid rgba(0, 229, 255, 0.2);
+    border: 2px solid var(--accent-purple);
     transform: perspective(1000px) rotateY(-5deg);
     transition: transform 0.5s ease;
 }
@@ -834,7 +834,7 @@ section {
     gap: 10px;
     padding: 12px 25px;
     background: var(--gradient-tech);
-    color: #fff;
+    color: var(--primary-light);
     border-radius: 50px;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -844,7 +844,7 @@ section {
 
 .feedback-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.25);
+    box-shadow: 0 10px 20px var(--accent-blue);
 }
 
 .copyright {
@@ -1141,7 +1141,7 @@ section {
     }
 }
 
-@media (max-width: 576px) {
+/*@media (max-width: 576px) {
     .carousel-item {
         width: 250px;
     }
@@ -1161,4 +1161,4 @@ section {
         font-size: 1.2rem;
     }
 }
-
+*/
