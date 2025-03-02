@@ -41,12 +41,15 @@ html {
     scroll-behavior: smooth;
 }
 
+/* OPCIÓN 1: AMANECER DIGITAL */
 body {
     font-family: var(--font-body);
     background-color: var(--primary-dark);
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
+    background-image: radial-gradient(circle at 15% 50%, rgba(255, 61, 138, 0.08) 0%, transparent 45%),
+                      radial-gradient(circle at 85% 30%, rgba(161, 86, 255, 0.08) 0%, transparent 40%);
 }
 
 a {
@@ -55,12 +58,22 @@ a {
     transition: all 0.3s ease;
 }
 
+a:hover {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 5px rgba(255, 126, 80, 0.4);
+}
+
 ul {
     list-style: none;
 }
 
 section {
     padding: 80px 20px;
+    border-radius: 12px;
+    margin: 10px 0;
+    background-color: rgba(26, 19, 38, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .section-title {
@@ -75,6 +88,7 @@ section {
     position: relative;
     display: inline-block;
     padding-bottom: 15px;
+    text-shadow: 0 0 10px rgba(255, 126, 80, 0.3);
 }
 
 .section-title h2::after {
@@ -87,6 +101,7 @@ section {
     height: 3px;
     background: var(--gradient-tech);
     border-radius: 3px;
+    box-shadow: var(--tech-glow);
 }
 
 /* Barra de navegación */
@@ -352,7 +367,7 @@ section {
 
 /* Sección de Tutoriales (Carrusel) */
 .tutorials-section {
-    background-color: var(--primary-dark);
+    background-color: var(--primary-medium);
     position: relative;
     padding: 60px 0;
     overflow: hidden;
@@ -380,7 +395,7 @@ section {
     font-family: var(--font-code);
     font-size: 2.5rem;
     color: var(--accent-cyan);
-    text-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+    text-shadow: 0 0 10px var(--accent-purple);
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
@@ -399,7 +414,7 @@ section {
     height: 8px;
     background-color: var(--accent-cyan);
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+    box-shadow: 0 0 10px var(--accent-purple);
 }
 
 .title-decoration .line {
@@ -444,7 +459,7 @@ section {
 }
 
 .carousel-item:hover .video-wrapper {
-    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.25);
+    box-shadow: 0 10px 20px var(--accent-cyan);
 }
 
 .carousel-item:hover .play-icon {
@@ -459,7 +474,7 @@ section {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgba(0, 229, 255, 0.2);
+    border: 2px solid var(--accent-teal);
     transition: all 0.4s ease;
 }
 
@@ -487,14 +502,14 @@ section {
     transform: translate(-50%, -50%) scale(1);
     width: 60px;
     height: 60px;
-    background-color: rgba(0, 229, 255, 0.9);
+    background-color: var(--accent-cyan);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--primary-dark);
     font-size: 1.5rem;
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+    box-shadow: 0 0 20px var(--accent-teal);
     z-index: 2;
     opacity: 0.7;
     transition: all 0.3s ease;
@@ -533,7 +548,7 @@ section {
     justify-content: center;
     gap: 15px;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--accent-cyan);
 }
 
 .video-meta span {
@@ -557,7 +572,7 @@ section {
     max-width: 500px;
     margin: 0 auto;
     padding: 5px;
-    background-color: rgba(0, 20, 40, 0.5);
+    background-color: var(--primary-dark);
     border-radius: 50px;
     backdrop-filter: blur(5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -572,7 +587,7 @@ section {
 
 .scrollbar-indicator {
     height: 6px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--accent-cyan);
     border-radius: 3px;
     position: relative;
     overflow: hidden;
@@ -580,18 +595,18 @@ section {
 
 .scrollbar-thumb {
     height: 100%;
-    background: linear-gradient(90deg, #00E5FF, #0097B2);
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
     border-radius: 3px;
     position: absolute;
     left: 0;
     width: 20%; /* Será actualizado por JS */
     transition: left 0.1s ease, width 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    box-shadow: 0 0 10px var(--primary-light);
 }
 
 .carousel-btn {
-    background-color: rgba(0, 229, 255, 0.15);
-    color: var(--accent-cyan);
+    background-color: var(--accent-teal);
+    color: var(--primary-dark);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -609,7 +624,7 @@ section {
     background-color: var(--accent-cyan);
     color: var(--primary-dark);
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+    box-shadow: 0 0 15px var(--accent-teal);
 }
 
 .carousel-btn:active {
@@ -663,12 +678,12 @@ section {
     overflow: hidden;
     box-shadow: var(--tech-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0, 229, 255, 0.1);
+    border: 1px solid var(--accent-blue);
 }
 
 .teacher-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.25);
+    box-shadow: 0 10px 20px var(--accent-purple);
 }
 
 .teacher-avatar {
@@ -745,7 +760,7 @@ section {
     border-radius: 10px;
     padding: 30px;
     box-shadow: var(--tech-shadow);
-    border: 1px solid rgba(0, 229, 255, 0.1);
+    border: 1px solid var(--accent-purple);
 }
 
 .contact-group h3 {
@@ -753,7 +768,7 @@ section {
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: var(--accent-cyan);
-    border-bottom: 2px solid rgba(0, 229, 255, 0.2);
+    border-bottom: 2px solid var(--accent-blue);
     padding-bottom: 10px;
 }
 
@@ -765,7 +780,7 @@ section {
 
 .contact-group ul li span {
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--accent-teal);
     margin-bottom: 5px;
 }
 
@@ -773,7 +788,7 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--accent-cyan);
+    color: var(--accent-purple);
     transition: all 0.3s ease;
 }
 
@@ -931,4 +946,219 @@ section {
 
 .volume-control {
     display: flex;
-    align-items: cen
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-control i {
+    color: var(--accent-cyan);
+    font-size: 0.9rem;
+}
+
+.volume-slider {
+    flex: 1;
+    height: 5px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    cursor: pointer;
+    border: none;
+}
+
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .video-carousel-container {
+        width: 95%;
+    }
+    
+    .carousel-item {
+        width: 300px;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .hero-text {
+        padding-right: 0;
+        margin-top: 40px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .social-buttons {
+        justify-content: center;
+    }
+    
+    .teachers-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .tutorials-section {
+        padding: 40px 0;
+    }
+    
+    .carousel-item {
+        width: 280px;
+    }
+    
+    .carousel-controls {
+        width: 90%;
+    }
+    
+    .title-decoration .line {
+        width: 50px;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--primary-medium);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .contacts-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 60px 15px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-buttons .btn {
+        width: 200px;
+        justify-content: center;
+    }
+    
+    .schedule-container {
+        width: 100%;
+    }
+    
+    .carousel-item {
+        width: 280px;
+    }
+    
+    .radio-player {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .radio-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .player-controls {
+        width: 250px;
+        bottom: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item {
+        width: 250px;
+    }
+    
+    .carousel-controls {
+        width: 95%;
+        max-width: 350px;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .play-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
