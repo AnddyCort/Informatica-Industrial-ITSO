@@ -126,53 +126,125 @@
     </section>
 
     <!-- Sección de Tutoriales (Carrusel de Videos) -->
-    <section id="tutoriales" class="tutorials-section">
-        <div class="section-title">
-            <h2>Videos Recomendados</h2>
+<section id="tutoriales" class="tutorials-section">
+    <div class="section-title">
+        <h2>Videos Recomendados</h2>
+        <div class="title-decoration">
+            <span class="dot"></span>
+            <span class="line"></span>
+            <span class="dot"></span>
         </div>
-        <div class="carousel-container">
-            <button class="carousel-btn prev-btn">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            
-            <div class="video-carousel">
-                <div class="carousel-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/uUdKAYl-F7g" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <div class="video-carousel-container">
+        <div class="video-carousel">
+            <div class="carousel-item">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
                     </div>
+                    <iframe src="https://www.youtube.com/embed/uUdKAYl-F7g" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item-info">
                     <h3>SQL Desde 0</h3>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/TiQPyROz5HA" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 2h 05m</span>
+                        <span><i class="fas fa-graduation-cap"></i> Básico</span>
                     </div>
-                    <h3>LEDs a 220V</h3>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/KVO69jh2aBQ" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <h3>Fracciones Desde 0</h3>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/qxXcI56NfnE" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <h3>Aprende JAVA</h3>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/zBIG4D8KhWc" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <h3>Programación Modular</h3>
                 </div>
             </div>
-            
-            <button class="carousel-btn next-btn">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <div class="carousel-item">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/TiQPyROz5HA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item-info">
+                    <h3>LEDs a 220V</h3>
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 1h 25m</span>
+                        <span><i class="fas fa-graduation-cap"></i> Intermedio</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/KVO69jh2aBQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item-info">
+                    <h3>Fracciones Desde 0</h3>
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 45m</span>
+                        <span><i class="fas fa-graduation-cap"></i> Básico</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/qxXcI56NfnE" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item-info">
+                    <h3>Aprende JAVA</h3>
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 3h 10m</span>
+                        <span><i class="fas fa-graduation-cap"></i> Avanzado</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/zBIG4D8KhWc" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item-info">
+                    <h3>Programación Modular</h3>
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 1h 55m</span>
+                        <span><i class="fas fa-graduation-cap"></i> Intermedio</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+    
+    <div class="carousel-controls">
+        <button class="carousel-btn prev-btn" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="scrollbar-container">
+            <div class="scrollbar-indicator">
+                <div class="scrollbar-thumb"></div>
+            </div>
+        </div>
+        <button class="carousel-btn next-btn" aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    
+    <div class="carousel-pagination">
+        <span class="current-page">1</span>
+        <span class="total-pages">3</span>
+    </div>
+</section>
 
     <!-- Sección de Docentes -->
     <section id="docentes" class="teachers-section">
@@ -396,158 +468,15 @@
 
         // JavaScript para el carrusel de videos
         document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.querySelector('.video-carousel');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            const items = document.querySelectorAll('.carousel-item');
-            
-            let scrollAmount = 0;
-            const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(items[0]).marginRight);
-            
-            // Botón siguiente
-            nextBtn.addEventListener('click', function() {
-                scrollAmount += itemWidth;
-                if (scrollAmount > carousel.scrollWidth - carousel.clientWidth) {
-                    scrollAmount = 0;
-                }
-                carousel.scrollTo({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Botón anterior
-            prevBtn.addEventListener('click', function() {
-                scrollAmount -= itemWidth;
-                if (scrollAmount < 0) {
-                    scrollAmount = carousel.scrollWidth - carousel.clientWidth;
-                    if (scrollAmount < 0) scrollAmount = 0;
-                }
-                carousel.scrollTo({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Permitir scroll horizontal con la rueda del mouse
-            carousel.addEventListener('wheel', function(e) {
-                e.preventDefault();
-                carousel.scrollLeft += e.deltaY;
-            });
-        });
-
-        // JavaScript para el reproductor de radio
-        document.addEventListener('DOMContentLoaded', function() {
-            const radioToggle = document.querySelector('.radio-toggle');
-            const playerControls = document.querySelector('.player-controls');
-            const playBtn = document.querySelector('.play-btn');
-            const stopBtn = document.querySelector('.stop-btn');
-            const nextStationBtn = document.querySelector('.next-station');
-            const volumeSlider = document.querySelector('.volume-slider');
-            const currentStationDisplay = document.querySelector('.current-station');
-            
-            let audio = new Audio();
-            let isPlaying = false;
-            let hideTimeout;
-            
-            // Estaciones de radio
-            const stations = [
-                {
-                    name: "📻 K-pop 🪔",
-                    url: "https://antares.dribbcast.com/proxy/kpop?mp=/stream"
-                },
-                {
-                    name: "📻 Pop 🕯️",
-                    url: "http://stream.zeno.fm/dx838nn9e8zuv.acc"
-                },
-                {
-                    name: "📻 Clasicos 🚬",
-                    url: "https://stream-175.zeno.fm/fmrzu273ud0uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJmbXJ6dTI3M3VkMHV2IiwiaG9zdCI6InN0cmVhbS0xNzUuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InVYMmRYU1RjUVlTNFRaU19WVHNXeHciLCJpYXQiOjE3NDA4NzE2NzQsImV4cCI6MTc0MDg3MTczNH0.dfJ58BH3c6RIzCQY2igFkRGWEQ38t7BVIhgVFlRFSwQ"
-                }
-            ];
-            
-            let currentStation = 0;
-            
-            // Inicializar audio
-            audio.src = stations[currentStation].url;
-            audio.volume = volumeSlider.value / 100;
-            
-            // Mostrar/ocultar controles
-            radioToggle.addEventListener('click', function() {
-                playerControls.classList.toggle('show');
-                
-                // Auto-ocultar después de 5 segundos
-                clearTimeout(hideTimeout);
-                hideTimeout = setTimeout(() => {
-                    playerControls.classList.remove('show');
-                }, 5000);
-            });
-            
-            // Mantener visible al interactuar con los controles
-            playerControls.addEventListener('mouseenter', function() {
-                clearTimeout(hideTimeout);
-            });
-            
-            playerControls.addEventListener('mouseleave', function() {
-                hideTimeout = setTimeout(() => {
-                    playerControls.classList.remove('show');
-                }, 5000);
-            });
-            
-            // Reproducir/pausar
-            playBtn.addEventListener('click', function() {
-                if (isPlaying) {
-                    audio.pause();
-                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
-                } else {
-                    audio.play();
-                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                }
-                isPlaying = !isPlaying;
-            });
-            
-            // Detener
-            stopBtn.addEventListener('click', function() {
-                audio.pause();
-                audio.currentTime = 0;
-                isPlaying = false;
-                playBtn.innerHTML = '<i class="fas fa-play"></i>';
-            });
-            
-            // Cambiar estación
-            nextStationBtn.addEventListener('click', function() {
-                currentStation = (currentStation + 1) % stations.length;
-                currentStationDisplay.textContent = stations[currentStation].name;
-                
-                // Guardar estado actual
-                const wasPlaying = isPlaying;
-                const volume = audio.volume;
-                
-                // Cambiar estación
-                audio.src = stations[currentStation].url;
-                audio.volume = volume;
-                
-                // Restaurar estado
-                if (wasPlaying) {
-                    audio.play();
-                }
-            });
-            
-            // Control de volumen
-            volumeSlider.addEventListener('input', function() {
-                audio.volume = this.value / 100;
-            });
-        });
-
-        // Animación para la barra de navegación al hacer scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
-</body>
-</html>
+    const carousel = document.querySelector('.video-carousel');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const items = document.querySelectorAll('.carousel-item');
+    const scrollbarThumb = document.querySelector('.scrollbar-thumb');
+    const currentPageEl = document.querySelector('.current-page');
+    const totalPagesEl = document.querySelector('.total-pages');
+    
+    // Variables para el carrusel
+    let scrollAmount = 0;
+    let currentPage = 1;
+    let itemsPerPage = calculateItemsPerPage();
