@@ -424,7 +424,7 @@
         </button>
         <div class="player-controls">
             <div class="station-info">
-                <span class="current-station">Estación 1</span>
+                <span class="current-station">📻 K-pop 🪔</span>
             </div>
             <div class="control-buttons">
                 <button class="play-btn">
@@ -480,3 +480,316 @@
     let scrollAmount = 0;
     let currentPage = 1;
     let itemsPerPage = calculateItemsPerPage();
+    let totalPages = Math.ceil(items.length / itemsPerPage);
+    
+    // Inicializar paginación
+    updatePagination();
+    
+    // Función para calcular cuántos items caben en una vista
+    function calculateItemsPerPage() {
+        const carouselWidth = carousel.clientWidth;
+        const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(items[0]).marginRight);
+        return Math.floor(carouselWidth / itemWidth);
+    }
+    
+    // Función para actualizar la paginación
+    function updatePagination() {
+        currentPage = Math.ceil((carousel.scrollLeft / (carousel.scrollWidth - carousel.clientWidth)) * totalPages) || 1;
+        totalPages = Math.ceil(items.length / itemsPerPage);
+        
+        currentPageEl.textContent = currentPage;
+        totalPagesEl.textContent = totalPages;
+    }
+    
+    // Función para actualizar la posición del thumb del scrollbar
+    function updateScrollThumb() {
+        const scrollPercentage = carousel.scrollLeft / (carousel.scrollWidth - carousel.clientWidth);
+        const thumbWidthPercentage = (carousel.clientWidth / carousel.scrollWidth) * 100;
+        
+        // Actualiza el ancho del thumb (no menos del 10%)
+        scrollbarThumb.style.width = `${Math.max(thumbWidthPercentage, 10)}%`;
+        
+        // Calcula la posición máxima que puede tener el thumb
+        const maxPosition = 100 - parseFloat(scrollbarThumb.style.width);
+        
+        // Actualiza la posición del thumb
+        scrollbarThumb.style.left = `${scrollPercentage * maxPosition}%`;
+        
+        // Actualizar paginación
+        updatePagination();
+    }
+    
+    // Función para desplazarse a la página especificada
+    function goToPage(page) {
+        if (page < 1) page = 1;
+        if (page > totalPages) page = totalPages;
+        
+        currentPage = page;
+        const pageWidth = carousel.scrollWidth / totalPages;
+        scrollAmount = (page - 1) * pageWidth;
+        
+        carousel.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Botón siguiente
+    nextBtn.addEventListener('click', function() {
+        goToPage(currentPage + 1);
+    });
+    
+    // Botón anterior
+    prevBtn.addEventListener('click', function() {
+        goToPage(currentPage - 1);
+    });
+    
+    // Actualizar thumb al hacer scroll
+    carousel.addEventListener('scroll', function() {
+        scrollAmount = carousel.scrollLeft;
+        updateScrollThumb();
+    });
+    
+    // Permitir scroll horizontal con la rueda del mouse
+    carousel.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        carousel.scrollLeft += e.deltaY;
+        scrollAmount = carousel.scrollLeft;
+        updateScrollThumb();
+    });
+    
+    // Hacer el scrollbar interactivo
+    const scrollbarIndicator = document.querySelector('.scrollbar-indicator');
+    scrollbarIndicator.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        const startX = e.clientX;
+        const startLeft = carousel.scrollLeft;
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        
+        function onMouseMove(e) {
+            const deltaX = e.clientX - startX;
+            const percentDelta = deltaX / scrollbarIndicator.clientWidth;
+            const scrollDelta = percentDelta * maxScroll;
+            const newScroll = Math.max(0, Math.min(maxScroll, startLeft + scrollDelta));
+            
+            carousel.scrollLeft = newScroll;
+            scrollAmount = newScroll;
+        }
+        
+        function onMouseUp() {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+        
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+    });
+    
+    // Click en el scrollbar para saltar a una posición
+    scrollbarIndicator.addEventListener('click', function(e) {
+        // Solo procesar si no se está arrastrando
+        if (e.target === this) {
+            const clickPositionPercentage = (e.clientX - this.getBoundingClientRect().left) / this.clientWidth;
+            scrollAmount = clickPositionPercentage * (carousel.scrollWidth - carousel.clientWidth);
+            
+            carousel.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    });
+    
+    // Agregar efectos al hover en los items del carrusel
+    items.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            // Reducir la opacidad de los otros items
+            items.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.style.opacity = '0.7';
+                    otherItem.style.transform = 'scale(0.98)';
+                }
+            });
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            // Restaurar la opacidad de todos los items
+            items.forEach(otherItem => {
+                otherItem.style.opacity = '1';
+                otherItem.style.transform = '';
+            });
+        });
+    });
+    
+    // Inicializar el scrollbar thumb
+    updateScrollThumb();
+    
+    // Actualizar todo al redimensionar la ventana
+    window.addEventListener('resize', function() {
+        itemsPerPage = calculateItemsPerPage();
+        totalPages = Math.ceil(items.length / itemsPerPage);
+        updateScrollThumb();
+        updatePagination();
+    });
+    
+    // Añadir interacción avanzada al carrusel
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.style.cursor = 'grabbing';
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+    });
+    
+    carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+    });
+    
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2; // Multiplicador de velocidad
+        carousel.scrollLeft = scrollLeft - walk;
+        updateScrollThumb();
+    });
+    
+    // Añadir soporte para deslizar en dispositivos táctiles
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
+    
+    carousel.addEventListener('touchmove', (e) => {
+        if (e.touches.length !== 1) return;
+        const x = e.touches[0].pageX - carousel.offsetLeft;
+        const walk = (startX - x) * 1.5;
+        carousel.scrollLeft = scrollLeft + walk;
+        e.preventDefault(); // Prevenir scroll de página
+        updateScrollThumb();
+    });
+});
+
+        // JavaScript para el reproductor de radio
+        document.addEventListener('DOMContentLoaded', function() {
+            const radioToggle = document.querySelector('.radio-toggle');
+            const playerControls = document.querySelector('.player-controls');
+            const playBtn = document.querySelector('.play-btn');
+            const stopBtn = document.querySelector('.stop-btn');
+            const nextStationBtn = document.querySelector('.next-station');
+            const volumeSlider = document.querySelector('.volume-slider');
+            const currentStationDisplay = document.querySelector('.current-station');
+            
+            let audio = new Audio();
+            let isPlaying = false;
+            let hideTimeout;
+            
+            // Estaciones de radio
+            const stations = [
+                {
+                    name: "📻 K-pop 🪔",
+                    url: "https://antares.dribbcast.com/proxy/kpop?mp=/stream"
+                },
+                {
+                    name: "📻 Pop 🕯️",
+                    url: "http://stream.zeno.fm/dx838nn9e8zuv.acc"
+                },
+                {
+                    name: "📻 Clasicos 🚬",
+                    url: "https://stream-175.zeno.fm/fmrzu273ud0uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJmbXJ6dTI3M3VkMHV2IiwiaG9zdCI6InN0cmVhbS0xNzUuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InVYMmRYU1RjUVlTNFRaU19WVHNXeHciLCJpYXQiOjE3NDA4NzE2NzQsImV4cCI6MTc0MDg3MTczNH0.dfJ58BH3c6RIzCQY2igFkRGWEQ38t7BVIhgVFlRFSwQ"
+                }
+            ];
+            
+            let currentStation = 0;
+            
+            // Inicializar audio
+            audio.src = stations[currentStation].url;
+            audio.volume = volumeSlider.value / 100;
+            
+            // Mostrar/ocultar controles
+            radioToggle.addEventListener('click', function() {
+                playerControls.classList.toggle('show');
+                
+                // Auto-ocultar después de 5 segundos
+                clearTimeout(hideTimeout);
+                hideTimeout = setTimeout(() => {
+                    playerControls.classList.remove('show');
+                }, 5000);
+            });
+            
+            // Mantener visible al interactuar con los controles
+            playerControls.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout);
+            });
+            
+            playerControls.addEventListener('mouseleave', function() {
+                hideTimeout = setTimeout(() => {
+                    playerControls.classList.remove('show');
+                }, 5000);
+            });
+            
+            // Reproducir/pausar
+            playBtn.addEventListener('click', function() {
+                if (isPlaying) {
+                    audio.pause();
+                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                } else {
+                    audio.play();
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                }
+                isPlaying = !isPlaying;
+            });
+            
+            // Detener
+            stopBtn.addEventListener('click', function() {
+                audio.pause();
+                audio.currentTime = 0;
+                isPlaying = false;
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            });
+            
+            // Cambiar estación
+            nextStationBtn.addEventListener('click', function() {
+                currentStation = (currentStation + 1) % stations.length;
+                currentStationDisplay.textContent = stations[currentStation].name;
+                
+                // Guardar estado actual
+                const wasPlaying = isPlaying;
+                const volume = audio.volume;
+                
+                // Cambiar estación
+                audio.src = stations[currentStation].url;
+                audio.volume = volume;
+                
+                // Restaurar estado
+                if (wasPlaying) {
+                    audio.play();
+                }
+            });
+            
+            // Control de volumen
+            volumeSlider.addEventListener('input', function() {
+                audio.volume = this.value / 100;
+            });
+        });
+
+        // Animación para la barra de navegación al hacer scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
