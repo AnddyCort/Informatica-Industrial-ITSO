@@ -256,7 +256,7 @@ section {
     max-width: 100%;
     border-radius: 10px;
     box-shadow: var(--tech-shadow);
-    border: 2px solid var(--accent-purple);
+    border: 2px solid var(--accent-teal);
     transform: perspective(1000px) rotateY(-5deg);
     transition: transform 0.5s ease;
 }
@@ -345,12 +345,12 @@ section {
 }
 
 .schedule-table th {
-    background-color: rgba(0, 229, 255, 0.1);
+    background-color: var(--accent-teal);
     font-family: var(--font-heading);
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--accent-cyan);
+    color: var(--primary-dark);
 }
 
 .schedule-table tr:nth-child(even) {
@@ -358,11 +358,11 @@ section {
 }
 
 .schedule-table tr:hover {
-    background-color: rgba(0, 229, 255, 0.05);
+    background-color: var(--primary-dark);
 }
 
 .break-row {
-    background-color: rgba(156, 39, 176, 0.2) !important;
+    background-color: var(--accent-purple) !important;
 }
 
 /* Sección de Tutoriales (Carrusel) */
@@ -683,7 +683,7 @@ section {
 
 .teacher-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px var(--accent-purple);
+    box-shadow: 0 10px 20px var(--accent-teal);
 }
 
 .teacher-avatar {
@@ -897,7 +897,7 @@ section {
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 229, 255, 0.2);
+    border: 1px solid var(--accent-teal);
 }
 
 .player-controls.show {
