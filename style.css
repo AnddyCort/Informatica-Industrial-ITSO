@@ -1,1164 +1,775 @@
-/* Variables de colores futuristas con tema oscuro */
-:root {
-    /* Colores primarios */
-    --primary-dark: #0f0a17;
-    --primary-medium: #1a1326;
-    --primary-light: #271a36;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍁 𝐼𝑛𝑓𝑜𝑟𝑚𝑎𝑡𝑖𝑐𝑎 𝐼𝑛𝑑𝑢𝑠𝑡𝑟𝑖𝑎𝑙</title>
+  
+  
+    <!-- Descripción -->
+    <meta name="description" content="🍀 𝙿𝚘𝚛𝚝𝚊𝚕 𝚎𝚍𝚞𝚌𝚊𝚝𝚒𝚟𝚘 𝚌𝚘𝚗 𝚛𝚎𝚌𝚞𝚛𝚜𝚘𝚜, 𝚑𝚘𝚛𝚊𝚛𝚒𝚘 𝚢 𝚖𝚊𝚝𝚎𝚛𝚒𝚊𝚕 𝚎𝚡𝚝𝚛𝚊">
+
+    <!-- Opción 1: Favicon con URL -->
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/bYScpTL8/9cdc4acd-ffa2-4387-9afc-c778f8da3ac2.png">
     
-    /* Acentos futuristas */
-    --accent-cyan: #ff7e50;
-    --accent-purple: #ff3d8a;
-    --accent-blue: #a156ff;
-    --accent-teal: #ffcb52;
+    <!-- Opción 1: Imagen de previsualización con URL -->
+    <meta property="og:title" content="🍁 𝐼𝑛𝑓𝑜𝑟𝑚𝑎𝑡𝑖𝑐𝑎 𝐼𝑛𝑑𝑢𝑠𝑡𝑟𝑖𝑎𝑙">
+    <meta property="og:description" content="🍀 𝙿𝚘𝚛𝚝𝚊𝚕 𝚎𝚍𝚞𝚌𝚊𝚝𝚒𝚟𝚘 𝚌𝚘𝚗 𝚛𝚎𝚌𝚞𝚛𝚜𝚘𝚜, 𝚑𝚘𝚛𝚊𝚛𝚒𝚘 𝚢 𝚖𝚊𝚝𝚎𝚛𝚒𝚊𝚕 𝚎𝚡𝚝𝚛𝚊">
+    <meta property="og:image" content="https://i.postimg.cc/HxHHV7L3/IMG-20250205-030822-792.jpg">
+    <meta property="og:url" content="https://anddycort.github.io/Informatica-Industrial-ITSO/">
+<meta property="og:type" content="website">
+  
+    <!-- Fonts - Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500;600&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="NP.css">
+</head>
+<body>
+    <!-- Barra de Navegación Flotante -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span>Info</span>Industrial
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#horario">Horario</a></li>
+                <li><a href="#tutoriales">Tutoriales</a></li>
+                <li><a href="#docentes">Docentes</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Informática Industrial</h1>
+                <p>2025/2Do.Semestre</p>
+                <div class="social-buttons">
+                    <a href="https://todosgruposw.blogspot.com/?m=1" class="btn whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://t.me/+VJrNYJire-phNGFh" class="btn telegram-btn">
+                        <i class="fab fa-telegram-plane"></i> Telegram
+                    </a>
+                    <a href="https://discord.gg/4ESWdD3qu5" class="btn discord-btn">
+                        <i class="fab fa-discord"></i> Discord
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://i.postimg.cc/Y2YfQLJ5/20250209-201234.gif" alt="Informática Industrial">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Horario -->
+    <section id="horario" class="schedule-section">
+        <div class="section-title">
+            <h2>Horario Académico</h2>
+        </div>
+        <div class="schedule-container">
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 09:30</td>
+                        <td>Programación II</td>
+                        <td>Calculo Aplicado</td>
+                        <td>Sistemas Digitales</td>
+                        <td>Electrónica General I</td>
+                        <td>Bases De Datos I</td>
+                    </tr>
+                    <tr>
+                        <td>09:30 - 11:00</td>
+                        <td>Programación II</td>
+                        <td>Calculo Aplicado</td>
+                        <td>Sistemas Digitales</td>
+                        <td>Electrónica General I</td>
+                        <td>Bases De Datos I</td>
+                    </tr>
+                    <tr class="break-row">
+                        <td>11:00 - 11:15</td>
+                        <td colspan="5">Receso</td>
+                    </tr>
+                    <tr>
+                        <td>11:15 - 12:45</td>
+                        <td>Programación II</td>
+                        <td>Inglés Técnico II</td>
+                        <td>Sistemas Digitales</td>
+                        <td>Electrónica General I</td>
+                        <td>Bases De Datos I</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Sección de Tutoriales (Carrusel de Videos) -->
+<section id="tutoriales" class="tutorials-section">
+    <div class="section-title">
+        <h2>Videos Recomendados</h2>
+        <div class="title-decoration">
+            <!--<span class="dot"></span>
+            <span class="line"></span>
+            <span class="dot"></span>-->
+        </div>
+    </div>
     
-    /* Gradientes */
-    --gradient-tech: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    --gradient-tech-alt: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+    <div class="video-carousel-container">
+        <div class="video-carousel">
+            <div class="carousel-item">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/uUdKAYl-F7g" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item-info">
+                    <h3>SQL Desde 0</h3>
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/TiQPyROz5HA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item-info">
+                    <h3>LEDs a 220V</h3>
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/KVO69jh2aBQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item-info">
+                    <h3>Fracciones Desde 0</h3>
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/qxXcI56NfnE" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item-info">
+                    <h3>Aprende JAVA</h3>
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        <!-- <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>-->
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/zBIG4D8KhWc" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item-info">
+                    <h3>Programación Modular</h3>
+                    <!--<div class="video-meta">
+                        <span><i class="fas fa-clock"></i> 1h 55m</span>
+                        <span><i class="fas fa-graduation-cap"></i> Intermedio</span>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
     
-    /* Colores de plataformas */
-    --whatsapp: #25D366;
-    --telegram: #0088cc;
-    --discord: #7289DA;
+    <div class="carousel-controls">
+        <button class="carousel-btn prev-btn" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="scrollbar-container">
+            <div class="scrollbar-indicator">
+                <div class="scrollbar-thumb"></div>
+            </div>
+        </div>
+        <button class="carousel-btn next-btn" aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
     
-    /* Fuentes */
-    --font-heading: 'Orbitron', sans-serif;
-    --font-code: 'Roboto Mono', monospace;
-    --font-body: 'Titillium Web', sans-serif;
+    <div class="carousel-pagination">
+        <span class="current-page">1</span>
+        <span class="total-pages">3</span>
+    </div>
+</section>
+
+    <!-- Sección de Docentes -->
+    <section id="docentes" class="teachers-section">
+        <div class="section-title">
+            <h2>Nuestros Docentes</h2>
+        </div>
+        <div class="teachers-container">
+            <div class="teacher-card">
+                <div class="teacher-avatar">
+                    <img src="https://i.postimg.cc/3JpTCBD9/d6ebe3c8-5dbc-4e99-8c03-a2bde3296896.jpg" alt="Profesor 1">
+                </div>
+                <div class="teacher-info">
+                    <h3>Lic. Ximena Miranda Quispe</h3>
+                <p>Programación II</p>
+                <a href="https://wa.me/+59176529951" class="contact-btn">
+                        <i class="fab fa-whatsapp"></i> Contactar
+                    </a>
+                </div>
+            </div>
+            
+            <div class="teacher-card">
+                <div class="teacher-avatar">
+                    <img src="https://i.postimg.cc/3JpTCBD9/d6ebe3c8-5dbc-4e99-8c03-a2bde3296896.jpg" alt="Profesor 2">
+                </div>
+                <div class="teacher-info">
+                    <h3>Lic. Ximena Miranda Quispe</h3>
+                <p>Calculo Aplicado</p>
+                <a href="https://wa.me/+59176529951" class="contact-btn">
+                        <i class="fab fa-whatsapp"></i> Contactar
+                    </a>
+                </div>
+            </div>
+            
+            <div class="teacher-card">
+                <div class="teacher-avatar">
+                    <img src="https://i.postimg.cc/NjcwNH6t/Owner-free-icons-designed-by-SBTS2018.jpg" alt="Profesor 3">
+                </div>
+                <div class="teacher-info">
+                    <h3>Lic. Justo Balbi Aguilar</h3>
+                <p>Inglés Técnico II</p>
+                <a href="https://wa.me/+59168128732" class="contact-btn">
+                        <i class="fab fa-whatsapp"></i> Contactar
+                    </a>
+                </div>
+            </div>
+            
+            <div class="teacher-card">
+                <div class="teacher-avatar">
+                    <img src="https://i.postimg.cc/NjcwNH6t/Owner-free-icons-designed-by-SBTS2018.jpg" alt="Profesor 4">
+                </div>
+                <div class="teacher-info">
+                    <h3>Lic. Sergio Mamani</h3>
+                <p>Sistemas Digitales</p>
+                <a href="https://wa.me/+59177771272" class="contact-btn">
+                        <i class="fab fa-whatsapp"></i> Contactar
+                    </a>
+                </div>
+            </div>
+          
+          <div class="teacher-card">
+                <div class="teacher-avatar">
+                    <img src="https://i.postimg.cc/3JpTCBD9/d6ebe3c8-5dbc-4e99-8c03-a2bde3296896.jpg" alt="Profesor 3">
+                </div>
+                <div class="teacher-info">
+                    <h3>Ing. Deysi E. Chuquimia Quispe</h3>
+                <p>Electrónica General I</p>
+                <a href="https://wa.me/+59170637549" class="contact-btn">
+                        <i class="fab fa-whatsapp"></i> Contactar
+                    </a>
+                </div>
+            </div>
+          
+          <div class="teacher-card">
+                <div class="teacher-avatar">
+                    <img src="https://i.postimg.cc/NjcwNH6t/Owner-free-icons-designed-by-SBTS2018.jpg" alt="Profesor 4">
+                </div>
+                <div class="teacher-info">
+                    <h3>Lic. Pascual Yana Ch.</h3>
+                <p>Bases De Datos</p>
+                <a href="https://wa.me/+59170577697" class="contact-btn">
+                        <i class="fab fa-whatsapp"></i> Contactar
+                    </a>
+                </div>
+            </div>
+          
+        </div>
+    </section>
+
+    <!-- Sección de Contactos -->
+    <section id="contactos" class="contacts-section">
+        <div class="section-title">
+            <h2>Contactos Importantes</h2>
+        </div>
+        <div class="contacts-container">
+            <div class="contact-group">
+                <h3>Mesa Directiva</h3>
+                <ul>
+                    <li>
+                        <span>Delegado:</span>
+                        <a href="https://wa.me/+59173265596">
+                            <i class="fab fa-whatsapp"></i> Lesly
+                        </a>
+                    </li>
+                    <li>
+                        <span>Subdelegado:</span>
+                        <a href="https://wa.me/+59165557238">
+                            <i class="fab fa-whatsapp"></i> Brayan
+                        </a>
+                    </li>
+                  <!-- <li>
+                        <span>Actas:</span>
+                        <a href="https://wa.me/numero">
+                            <i class="fab fa-whatsapp"></i> Nombre Apellido
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+            
+          <!-- <div class="contact-group">
+                <h3>Centro Estudiantil</h3>
+                <ul>
+                    <li>
+                        <span>Presidente:</span>
+                        <a href="https://wa.me/numero">
+                            <i class="fab fa-whatsapp"></i> Nombre Apellido
+                        </a>
+                    </li>
+                    <li>
+                        <span>Vicepresidente:</span>
+                        <a href="https://wa.me/numero">
+                            <i class="fab fa-whatsapp"></i> Nombre Apellido
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+            
+            <div class="contact-group">
+                <h3>Secretaría del Instituto</h3>
+                <ul>
+                    <li>
+                        <span>Telefono:</span>
+                        <a href="tel:+59176555326">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>
+                    </li>
+                    <li>
+                        <span>Whatsapp:</span>
+                        <a href="https://wa.me/+59176555326">
+                            <i class="fab fa-whatsapp"></i> Escribir
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="feedback-section">
+                <h3>Comentarios</h3>
+                <p>Por favor, envíame un comentario acerca de esta página</p>
+                <a href="https://t.me/+59163195679?text=👋Hola,%20tengo%20un%20comentario📬%20sobre%20la%20página🔎:" class="feedback-btn">
+                    <i class="fas fa-comment"></i> Enviar Comentario
+                </a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Informática Industrial. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reproductor de Radio Flotante -->
+    <div class="radio-player">
+        <button class="radio-toggle">
+            <i class="fas fa-broadcast-tower"></i>
+        </button>
+        <div class="player-controls">
+            <div class="station-info">
+                <span class="current-station">📻 K-pop 🪔</span>
+            </div>
+            <div class="control-buttons">
+                <button class="play-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="stop-btn">
+                    <i class="fas fa-stop"></i>
+                </button>
+                <button class="next-station">
+                    <i class="fas fa-forward"></i>
+                </button>
+            </div>
+            <div class="volume-control">
+                <i class="fas fa-volume-down"></i>
+                <input type="range" class="volume-slider" min="0" max="100" value="50">
+                <i class="fas fa-volume-up"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript para el menú responsivo
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        });
+
+        // JavaScript para el carrusel de videos
+        document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.video-carousel');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const items = document.querySelectorAll('.carousel-item');
+    const scrollbarThumb = document.querySelector('.scrollbar-thumb');
+    const currentPageEl = document.querySelector('.current-page');
+    const totalPagesEl = document.querySelector('.total-pages');
     
-    /* Sombras */
-    --tech-shadow: 0 5px 15px rgba(255, 61, 138, 0.25);
-    --tech-glow: 0 0 12px rgba(255, 61, 138, 0.6);
-}
-
-/* Reset y estilos base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* OPCIÓN 1: AMANECER DIGITAL */
-body {
-    font-family: var(--font-body);
-    background-color: var(--primary-dark);
-    color: #fff;
-    line-height: 1.6;
-    overflow-x: hidden;
-    background-image: radial-gradient(circle at 15% 50%, rgba(255, 61, 138, 0.08) 0%, transparent 45%),
-                      radial-gradient(circle at 85% 30%, rgba(161, 86, 255, 0.08) 0%, transparent 40%);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-}
-
-a:hover {
-    color: var(--primary-light);
-    text-shadow: 0 0 5px rgba(255, 126, 80, 0.4);
-}
-
-ul {
-    list-style: none;
-}
-
-section {
-    padding: 80px 20px;
-    border-radius: 12px;
-    margin: 10px 0;
-    background-color: rgba(26, 19, 38, 0.3);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title h2 {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: #fff;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 15px;
-    text-shadow: 0 0 10px rgba(255, 126, 80, 0.3);
-}
-
-.section-title h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: var(--gradient-tech);
-    border-radius: 3px;
-    box-shadow: var(--tech-glow);
-}
-
-/* Barra de navegación */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 20px 0;
-    transition: all 0.4s ease;
-    background-color: rgba(10, 14, 23, 0.7);
-    backdrop-filter: blur(10px);
-}
-
-.navbar.scrolled {
-    padding: 10px 0;
-    background-color: rgba(10, 14, 23, 0.9);
-    box-shadow: var(--tech-shadow);
-}
-
-.nav-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 700;
-    background: var(--gradient-tech);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.logo span {
-    color: var(--accent-cyan);
-    -webkit-text-fill-color: var(--accent-cyan);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links li {
-    margin: 0 20px;
-}
-
-.nav-links a {
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--gradient-tech);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease;
-    background-color: var(--accent-cyan);
-}
-
-/* Sección Hero */
-.hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: radial-gradient(ellipse at bottom, var(--primary-medium) 0%, var(--primary-dark) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1500" opacity="0.15"><rect fill="none" width="2000" height="1500"/><g fill="%2300e5ff"><circle r="5" cx="0" cy="0"/><circle r="5" cx="100" cy="100"/><circle r="5" cx="200" cy="200"/><circle r="5" cx="300" cy="300"/><circle r="5" cx="400" cy="400"/><circle r="5" cx="500" cy="500"/><circle r="5" cx="600" cy="600"/><circle r="5" cx="700" cy="700"/><circle r="5" cx="800" cy="800"/><circle r="5" cx="900" cy="900"/><circle r="5" cx="1000" cy="1000"/><circle r="5" cx="1100" cy="1100"/><circle r="5" cx="1200" cy="1200"/><circle r="5" cx="1300" cy="1300"/><circle r="5" cx="1400" cy="1400"/><circle r="5" cx="100" cy="0"/><circle r="5" cx="200" cy="0"/><circle r="5" cx="300" cy="0"/><circle r="5" cx="400" cy="0"/><circle r="5" cx="500" cy="0"/><circle r="5" cx="600" cy="0"/><circle r="5" cx="700" cy="0"/><circle r="5" cx="800" cy="0"/><circle r="5" cx="900" cy="0"/><circle r="5" cx="1000" cy="0"/><circle r="5" cx="1100" cy="0"/><circle r="5" cx="1200" cy="0"/><circle r="5" cx="1300" cy="0"/><circle r="5" cx="0" cy="100"/><circle r="5" cx="0" cy="200"/><circle r="5" cx="0" cy="300"/><circle r="5" cx="0" cy="400"/><circle r="5" cx="0" cy="500"/><circle r="5" cx="0" cy="600"/><circle r="5" cx="0" cy="700"/><circle r="5" cx="0" cy="800"/><circle r="5" cx="0" cy="900"/><circle r="5" cx="0" cy="1000"/><circle r="5" cx="0" cy="1100"/><circle r="5" cx="0" cy="1200"/><circle r="5" cx="0" cy="1300"/></g></svg>');
-    pointer-events: none;
-}
-
-.hero-content {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 80px;
-}
-
-.hero-text {
-    flex: 1;
-    padding-right: 50px;
-}
-
-.hero-text h1 {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #fff, var(--accent-cyan));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1.2;
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 35px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.hero-image img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: var(--tech-shadow);
-    border: 2px solid var(--accent-purple);
-    transform: perspective(1000px) rotateY(-5deg);
-    transition: transform 0.5s ease;
-}
-
-.hero-image img:hover {
-    transform: perspective(1000px) rotateY(0);
-}
-
-.social-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    gap: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.whatsapp-btn {
-    background-color: var(--whatsapp);
-    color: #fff;
-}
-
-.whatsapp-btn:hover {
-    background-color: #1da856;
-    transform: translateY(-2px);
-}
-
-.telegram-btn {
-    background-color: var(--telegram);
-    color: #fff;
-}
-
-.telegram-btn:hover {
-    background-color: #0072a8;
-    transform: translateY(-2px);
-}
-
-.discord-btn {
-    background-color: var(--discord);
-    color: #fff;
-}
-
-.discord-btn:hover {
-    background-color: #5b73bc;
-    transform: translateY(-2px);
-}
-
-/* Sección de Horario */
-.schedule-section {
-    background-color: var(--primary-medium);
-    position: relative;
-    overflow: hidden;
-}
-
-.schedule-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow-x: auto;
-}
-
-.schedule-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--tech-shadow);
-    background-color: rgba(30, 39, 54, 0.8);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 229, 255, 0.2);
-}
-
-.schedule-table th,
-.schedule-table td {
-    padding: 15px;
-    text-align: center;
-    border: 1px solid rgba(0, 229, 255, 0.1);
-}
-
-.schedule-table th {
-    background-color: rgba(0, 229, 255, 0.1);
-    font-family: var(--font-heading);
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--accent-cyan);
-}
-
-.schedule-table tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.schedule-table tr:hover {
-    background-color: rgba(0, 229, 255, 0.05);
-}
-
-.break-row {
-    background-color: rgba(156, 39, 176, 0.2) !important;
-}
-
-/* Sección de Tutoriales (Carrusel) */
-.tutorials-section {
-    background-color: var(--primary-medium);
-    position: relative;
-    padding: 60px 0;
-    overflow: hidden;
-}
-
-.tutorials-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 30% 50%, rgba(0, 229, 255, 0.05) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.section-title h2 {
-    font-family: var(--font-code);
-    font-size: 2.5rem;
-    color: var(--accent-cyan);
-    text-shadow: 0 0 10px var(--accent-purple);
-    margin-bottom: 15px;
-    position: relative;
-    display: inline-block;
-}
-
-.title-decoration {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 5px;
-}
-
-.title-decoration .dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--accent-cyan);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent-purple);
-}
-
-.title-decoration .line {
-    height: 2px;
-    width: 80px;
-    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
-}
-
-.video-carousel-container {
-    width: 92%;
-    max-width: 1300px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.video-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Oculta scrollbar nativo */
-    -ms-overflow-style: none; /* Para IE y Edge */
-    padding: 10px 5px 30px;
-    gap: 25px;
-}
-
-.video-carousel::-webkit-scrollbar {
-    display: none; /* Oculta scrollbar para Chrome/Safari */
-}
-
-.carousel-item {
-    flex: 0 0 auto;
-    width: 350px;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    position: relative;
-    border-radius: 10px;
-    transform-origin: center bottom;
-}
-
-.carousel-item:hover {
-    transform: translateY(-15px) scale(1.02);
-    z-index: 5;
-}
-
-.carousel-item:hover .video-wrapper {
-    box-shadow: 0 10px 20px var(--accent-cyan);
-}
-
-.carousel-item:hover .play-icon {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 1;
-}
-
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    border: 2px solid var(--accent-teal);
-    transition: all 0.4s ease;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.carousel-item:hover .video-overlay {
-    opacity: 1;
-}
-
-.play-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    width: 60px;
-    height: 60px;
-    background-color: var(--accent-cyan);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--primary-dark);
-    font-size: 1.5rem;
-    box-shadow: 0 0 20px var(--accent-teal);
-    z-index: 2;
-    opacity: 0.7;
-    transition: all 0.3s ease;
-}
-
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-.item-info {
-    padding: 15px 10px;
-    text-align: center;
-}
-
-.carousel-item h3 {
-    margin: 0 0 10px;
-    font-family: var(--font-code);
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--accent-cyan);
-    transition: all 0.3s ease;
-}
-
-.carousel-item:hover h3 {
-    color: #fff;
-    text-shadow: 0 0 8px var(--accent-cyan);
-}
-
-.video-meta {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    font-size: 0.85rem;
-    color: var(--accent-cyan);
-}
-
-.video-meta span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.video-meta i {
-    color: var(--accent-cyan);
-    font-size: 0.8rem;
-}
-
-/* Controles del carrusel */
-.carousel-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 90%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 5px;
-    background-color: var(--primary-dark);
-    border-radius: 50px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 10;
-}
-
-.scrollbar-container {
-    flex-grow: 1;
-    padding: 0 5px;
-}
-
-.scrollbar-indicator {
-    height: 6px;
-    background-color: var(--accent-cyan);
-    border-radius: 3px;
-    position: relative;
-    overflow: hidden;
-}
-
-.scrollbar-thumb {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-    border-radius: 3px;
-    position: absolute;
-    left: 0;
-    width: 20%; /* Será actualizado por JS */
-    transition: left 0.1s ease, width 0.3s ease;
-    box-shadow: 0 0 10px var(--primary-light);
-}
-
-.carousel-btn {
-    background-color: var(--accent-teal);
-    color: var(--primary-dark);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-btn:hover {
-    background-color: var(--accent-cyan);
-    color: var(--primary-dark);
-    transform: scale(1.1);
-    box-shadow: 0 0 15px var(--accent-teal);
-}
-
-.carousel-btn:active {
-    transform: scale(0.95);
-}
-
-.carousel-btn i {
-    font-size: 1rem;
-}
-
-.carousel-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    font-family: var(--font-code);
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
-}
-
-.carousel-pagination .current-page {
-    color: var(--accent-cyan);
-    font-weight: bold;
-    position: relative;
-}
-
-.carousel-pagination .current-page::after {
-    content: '/';
-    margin: 0 5px;
-    color: rgba(255, 255, 255, 0.3);
-}
-
-/* Sección de Docentes */
-.teachers-section {
-    background-color: var(--primary-medium);
-    position: relative;
-}
-
-.teachers-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.teacher-card {
-    background-color: var(--primary-light);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--tech-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--accent-blue);
-}
-
-.teacher-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px var(--accent-purple);
-}
-
-.teacher-avatar {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-.teacher-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.teacher-card:hover .teacher-avatar img {
-    transform: scale(1.05);
-}
-
-.teacher-info {
-    padding: 20px;
-    text-align: center;
-}
-
-.teacher-info h3 {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    color: #fff;
-}
-
-.teacher-info p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 15px;
-    font-family: var(--font-code);
-}
-
-.contact-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 15px;
-    background-color: transparent;
-    border: 1px solid var(--accent-cyan);
-    color: var(--accent-cyan);
-    border-radius: 50px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    gap: 5px;
-}
-
-.contact-btn:hover {
-    background-color: var(--accent-cyan);
-    color: var(--primary-dark);
-}
-
-/* Sección de Contactos */
-.contacts-section {
-    background-color: var(--primary-dark);
-    position: relative;
-}
-
-.contacts-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.contact-group {
-    background-color: var(--primary-light);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: var(--tech-shadow);
-    border: 1px solid var(--accent-purple);
-}
-
-.contact-group h3 {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: var(--accent-cyan);
-    border-bottom: 2px solid var(--accent-blue);
-    padding-bottom: 10px;
-}
-
-.contact-group ul li {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-group ul li span {
-    font-weight: 600;
-    color: var(--accent-teal);
-    margin-bottom: 5px;
-}
-
-.contact-group ul li a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--accent-purple);
-    transition: all 0.3s ease;
-}
-
-.contact-group ul li a:hover {
-    color: #fff;
-    transform: translateX(5px);
-}
-
-/* Pie de Página */
-.footer {
-    background-color: var(--primary-medium);
-    padding: 50px 20px;
-    position: relative;
-}
-
-.footer-content {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.feedback-section {
-    margin-bottom: 30px;
-}
-
-.feedback-section h3 {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-.feedback-section p {
-    max-width: 600px;
-    margin: 0 auto 25px;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.feedback-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 25px;
-    background: var(--gradient-tech);
-    color: var(--primary-light);
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    letter-spacing: 0.5px;
-    box-shadow: var(--tech-shadow);
-}
-
-.feedback-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px var(--accent-blue);
-}
-
-.copyright {
-    margin-top: 30px;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
-}
-
-/* Reproductor de Radio Flotante */
-.radio-player {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 900;
-}
-
-.radio-toggle {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--gradient-tech);
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.radio-toggle:hover {
-    transform: scale(1.1);
-}
-
-.player-controls {
-    position: absolute;
-    bottom: 70px;
-    right: 0;
-    background-color: var(--primary-light);
-    border-radius: 15px;
-    padding: 20px;
-    width: 280px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 229, 255, 0.2);
-}
-
-.player-controls.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.station-info {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.current-station {
-    font-family: var(--font-code);
-    font-size: 1.1rem;
-    color: var(--accent-cyan);
-    letter-spacing: 1px;
-}
-
-.control-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.control-buttons button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(0, 229, 255, 0.1);
-    color: var(--accent-cyan);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.control-buttons button:hover {
-    background-color: var(--accent-cyan);
-    color: var(--primary-dark);
-}
-
-.volume-control {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.volume-control i {
-    color: var(--accent-cyan);
-    font-size: 0.9rem;
-}
-
-.volume-slider {
-    flex: 1;
-    height: 5px;
-    -webkit-appearance: none;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    outline: none;
-}
-
-.volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: var(--accent-cyan);
-    cursor: pointer;
-}
-
-.volume-slider::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: var(--accent-cyan);
-    cursor: pointer;
-    border: none;
-}
-
-
-/* Media Queries */
-@media (max-width: 992px) {
-    .video-carousel-container {
-        width: 95%;
+    // Variables para el carrusel
+    let scrollAmount = 0;
+    let currentPage = 1;
+    let itemsPerPage = calculateItemsPerPage();
+    let totalPages = Math.ceil(items.length / itemsPerPage);
+    
+    // Inicializar paginación
+    updatePagination();
+    
+    // Función para calcular cuántos items caben en una vista
+    function calculateItemsPerPage() {
+        const carouselWidth = carousel.clientWidth;
+        const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(items[0]).marginRight);
+        return Math.floor(carouselWidth / itemWidth);
     }
     
-    .carousel-item {
-        width: 300px;
+    // Función para actualizar la paginación
+    function updatePagination() {
+        currentPage = Math.ceil((carousel.scrollLeft / (carousel.scrollWidth - carousel.clientWidth)) * totalPages) || 1;
+        totalPages = Math.ceil(items.length / itemsPerPage);
+        
+        currentPageEl.textContent = currentPage;
+        totalPagesEl.textContent = totalPages;
     }
     
-    .section-title h2 {
-        font-size: 2rem;
+    // Función para actualizar la posición del thumb del scrollbar
+    function updateScrollThumb() {
+        const scrollPercentage = carousel.scrollLeft / (carousel.scrollWidth - carousel.clientWidth);
+        const thumbWidthPercentage = (carousel.clientWidth / carousel.scrollWidth) * 100;
+        
+        // Actualiza el ancho del thumb (no menos del 10%)
+        scrollbarThumb.style.width = `${Math.max(thumbWidthPercentage, 10)}%`;
+        
+        // Calcula la posición máxima que puede tener el thumb
+        const maxPosition = 100 - parseFloat(scrollbarThumb.style.width);
+        
+        // Actualiza la posición del thumb
+        scrollbarThumb.style.left = `${scrollPercentage * maxPosition}%`;
+        
+        // Actualizar paginación
+        updatePagination();
     }
     
-    .section-title h2 {
-        font-size: 2rem;
+    // Función para desplazarse a la página especificada
+    function goToPage(page) {
+        if (page < 1) page = 1;
+        if (page > totalPages) page = totalPages;
+        
+        currentPage = page;
+        const pageWidth = carousel.scrollWidth / totalPages;
+        scrollAmount = (page - 1) * pageWidth;
+        
+        carousel.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
     }
     
-    .hero-content {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
+    // Botón siguiente
+    nextBtn.addEventListener('click', function() {
+        goToPage(currentPage + 1);
+    });
     
-    .hero-text {
-        padding-right: 0;
-        margin-top: 40px;
-    }
+    // Botón anterior
+    prevBtn.addEventListener('click', function() {
+        goToPage(currentPage - 1);
+    });
     
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
+    // Actualizar thumb al hacer scroll
+    carousel.addEventListener('scroll', function() {
+        scrollAmount = carousel.scrollLeft;
+        updateScrollThumb();
+    });
     
-    .social-buttons {
-        justify-content: center;
-    }
+    // Permitir scroll horizontal con la rueda del mouse
+    carousel.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        carousel.scrollLeft += e.deltaY;
+        scrollAmount = carousel.scrollLeft;
+        updateScrollThumb();
+    });
     
-    .teachers-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
+    // Hacer el scrollbar interactivo
+    const scrollbarIndicator = document.querySelector('.scrollbar-indicator');
+    scrollbarIndicator.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        const startX = e.clientX;
+        const startLeft = carousel.scrollLeft;
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        
+        function onMouseMove(e) {
+            const deltaX = e.clientX - startX;
+            const percentDelta = deltaX / scrollbarIndicator.clientWidth;
+            const scrollDelta = percentDelta * maxScroll;
+            const newScroll = Math.max(0, Math.min(maxScroll, startLeft + scrollDelta));
+            
+            carousel.scrollLeft = newScroll;
+            scrollAmount = newScroll;
+        }
+        
+        function onMouseUp() {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+        
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+    });
+    
+    // Click en el scrollbar para saltar a una posición
+    scrollbarIndicator.addEventListener('click', function(e) {
+        // Solo procesar si no se está arrastrando
+        if (e.target === this) {
+            const clickPositionPercentage = (e.clientX - this.getBoundingClientRect().left) / this.clientWidth;
+            scrollAmount = clickPositionPercentage * (carousel.scrollWidth - carousel.clientWidth);
+            
+            carousel.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    });
+    
+    // Agregar efectos al hover en los items del carrusel
+    items.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            // Reducir la opacidad de los otros items
+            items.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.style.opacity = '0.7';
+                    otherItem.style.transform = 'scale(0.98)';
+                }
+            });
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            // Restaurar la opacidad de todos los items
+            items.forEach(otherItem => {
+                otherItem.style.opacity = '1';
+                otherItem.style.transform = '';
+            });
+        });
+    });
+    
+    // Inicializar el scrollbar thumb
+    updateScrollThumb();
+    
+    // Actualizar todo al redimensionar la ventana
+    window.addEventListener('resize', function() {
+        itemsPerPage = calculateItemsPerPage();
+        totalPages = Math.ceil(items.length / itemsPerPage);
+        updateScrollThumb();
+        updatePagination();
+    });
+    
+    // Añadir interacción avanzada al carrusel
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.style.cursor = 'grabbing';
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+    });
+    
+    carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+    });
+    
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2; // Multiplicador de velocidad
+        carousel.scrollLeft = scrollLeft - walk;
+        updateScrollThumb();
+    });
+    
+    // Añadir soporte para deslizar en dispositivos táctiles
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
+    
+    carousel.addEventListener('touchmove', (e) => {
+        if (e.touches.length !== 1) return;
+        const x = e.touches[0].pageX - carousel.offsetLeft;
+        const walk = (startX - x) * 1.5;
+        carousel.scrollLeft = scrollLeft + walk;
+        e.preventDefault(); // Prevenir scroll de página
+        updateScrollThumb();
+    });
+});
 
-@media (max-width: 768px) {
-    .tutorials-section {
-        padding: 40px 0;
-    }
-    
-    .carousel-item {
-        width: 280px;
-    }
-    
-    .carousel-controls {
-        width: 90%;
-    }
-    
-    .title-decoration .line {
-        width: 50px;
-    }
-    
-    .hamburger {
-        display: block;
-    }
-    
-    .nav-links {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--primary-medium);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        padding: 20px 0;
-        height: calc(100vh - 70px);
-        overflow-y: auto;
-    }
-    
-    .nav-links.active {
-        left: 0;
-    }
-    
-    .nav-links li {
-        margin: 15px 0;
-    }
-    
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-    
-    .section-title h2 {
-        font-size: 1.8rem;
-    }
-    
-    .hero-text h1 {
-        font-size: 2.2rem;
-    }
-    
-    .contacts-container {
-        grid-template-columns: 1fr;
-    }
-}
+        // JavaScript para el reproductor de radio
+        document.addEventListener('DOMContentLoaded', function() {
+            const radioToggle = document.querySelector('.radio-toggle');
+            const playerControls = document.querySelector('.player-controls');
+            const playBtn = document.querySelector('.play-btn');
+            const stopBtn = document.querySelector('.stop-btn');
+            const nextStationBtn = document.querySelector('.next-station');
+            const volumeSlider = document.querySelector('.volume-slider');
+            const currentStationDisplay = document.querySelector('.current-station');
+            
+            let audio = new Audio();
+            let isPlaying = false;
+            let hideTimeout;
+            
+            // Estaciones de radio
+            const stations = [
+                {
+                    name: "📻 K-pop 🪔",
+                    url: "https://antares.dribbcast.com/proxy/kpop?mp=/stream"
+                },
+                {
+                    name: "📻 Pop 🕯️",
+                    url: "http://stream.zeno.fm/dx838nn9e8zuv.acc"
+                },
+                {
+                    name: "📻 Clasicos 🚬",
+                    url: "https://stream-175.zeno.fm/fmrzu273ud0uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJmbXJ6dTI3M3VkMHV2IiwiaG9zdCI6InN0cmVhbS0xNzUuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InVYMmRYU1RjUVlTNFRaU19WVHNXeHciLCJpYXQiOjE3NDA4NzE2NzQsImV4cCI6MTc0MDg3MTczNH0.dfJ58BH3c6RIzCQY2igFkRGWEQ38t7BVIhgVFlRFSwQ"
+                }
+            ];
+            
+            let currentStation = 0;
+            
+            // Inicializar audio
+            audio.src = stations[currentStation].url;
+            audio.volume = volumeSlider.value / 100;
+            
+            // Mostrar/ocultar controles
+            radioToggle.addEventListener('click', function() {
+                playerControls.classList.toggle('show');
+                
+                // Auto-ocultar después de 5 segundos
+                clearTimeout(hideTimeout);
+                hideTimeout = setTimeout(() => {
+                    playerControls.classList.remove('show');
+                }, 5000);
+            });
+            
+            // Mantener visible al interactuar con los controles
+            playerControls.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout);
+            });
+            
+            playerControls.addEventListener('mouseleave', function() {
+                hideTimeout = setTimeout(() => {
+                    playerControls.classList.remove('show');
+                }, 5000);
+            });
+            
+            // Reproducir/pausar
+            playBtn.addEventListener('click', function() {
+                if (isPlaying) {
+                    audio.pause();
+                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                } else {
+                    audio.play();
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                }
+                isPlaying = !isPlaying;
+            });
+            
+            // Detener
+            stopBtn.addEventListener('click', function() {
+                audio.pause();
+                audio.currentTime = 0;
+                isPlaying = false;
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            });
+            
+            // Cambiar estación
+            nextStationBtn.addEventListener('click', function() {
+                currentStation = (currentStation + 1) % stations.length;
+                currentStationDisplay.textContent = stations[currentStation].name;
+                
+                // Guardar estado actual
+                const wasPlaying = isPlaying;
+                const volume = audio.volume;
+                
+                // Cambiar estación
+                audio.src = stations[currentStation].url;
+                audio.volume = volume;
+                
+                // Restaurar estado
+                if (wasPlaying) {
+                    audio.play();
+                }
+            });
+            
+            // Control de volumen
+            volumeSlider.addEventListener('input', function() {
+                audio.volume = this.value / 100;
+            });
+        });
 
-@media (max-width: 480px) {
-    section {
-        padding: 60px 15px;
-    }
-    
-    .hero-text h1 {
-        font-size: 1.8rem;
-    }
-    
-    .hero-text p {
-        font-size: 1rem;
-    }
-    
-    .social-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .social-buttons .btn {
-        width: 200px;
-        justify-content: center;
-    }
-    
-    .schedule-container {
-        width: 100%;
-    }
-    
-    .carousel-item {
-        width: 280px;
-    }
-    
-    .radio-player {
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .radio-toggle {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-    
-    .player-controls {
-        width: 250px;
-        bottom: 60px;
-    }
-}
-
-/*@media (max-width: 576px) {
-    .carousel-item {
-        width: 250px;
-    }
-    
-    .carousel-controls {
-        width: 95%;
-        max-width: 350px;
-    }
-    
-    .section-title h2 {
-        font-size: 1.8rem;
-    }
-    
-    .play-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-}
-*/
+        // Animación para la barra de navegación al hacer scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
